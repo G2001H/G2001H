@@ -7,7 +7,7 @@ const {
     Attachment
 } = require('discord.js');
 const bot = new Client();
-const PREFIX = 'g?';
+const PREFIX = ';';
 
 
 // Check if bot is on
