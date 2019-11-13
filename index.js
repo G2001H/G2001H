@@ -7,7 +7,7 @@ const {
     Attachment
 } = require('discord.js');
 const bot = new Client();
-const PREFIX = ';';
+const PREFIX = '';
 
 
 // Check if bot is on
@@ -26,32 +26,32 @@ bot.on('message', message=>{
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         // Help
-        case 'help':
+        case ';help':
                 const embed4 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members**')
-                .addField('**Prefix:**', PREFIX)
+                .addField('**Prefix:**', ";")
                 .addField('**Free Commands:**', '(Server Info), (Player Info), (ping), (hello), (dog), (cat), (quotes), (facts), (Im Verified?)')
                 .setFooter('This bot is By: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Owners**')
-                .addField('**Prefix:**', PREFIX)
+                .addField('**Prefix:**', ";")
                 .addField('**Owner Commands:**', '(purge), (kick), (mute), (ban), (I Owner?), (poll)')
                  .setFooter('This bot is By: G2001H#7660')
                   message.channel.send(embed5);
             break;
         // Ping
-        case 'ping': 
+        case ';ping': 
             message.reply('Pong! :ping_pong:');
             break;
         // Hello
-        case 'hello': 
+        case ';hello': 
             message.channel.send('hello guys!');
             break;
          // Server
-        case 'Server':
+        case ';Server':
             if(args[1] === "Info"){
                 const embed = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
@@ -67,7 +67,7 @@ bot.on('message', message=>{
             }
             break;
         // Player
-        case 'Player':
+        case ';Player':
             if(args[1] === "Info"){
                 const embed2 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
@@ -82,7 +82,7 @@ bot.on('message', message=>{
             }
             break;
         // Member
-        case 'Im':
+        case ';Im':
             if(args[1] === "Verified?"){
                 if(!message.member.roles.find(r => r.name === "Verified")) return message.reply('No your not!')
             //  .then(msg => msg.delete(5000));
@@ -92,19 +92,19 @@ bot.on('message', message=>{
             }
             break;
         // Image Dog
-        case 'dog':
+        case ';dog':
             dogs(message);
             break;
         // Image Cat
-        case 'cat': 
+        case ';cat': 
             cats(message);
             break;
         // Image Quotes
-        case 'quotes': 
+        case ';quotes': 
             quotes(message);
             break;
         // Image Facts
-        case 'facts': 
+        case ';facts': 
             fact(message);
             break;
 
@@ -113,7 +113,7 @@ bot.on('message', message=>{
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         // Poll
-        case 'poll':
+        case ';poll':
             if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             let msgArgs = args.slice(1).join(" ");
             message.channel.send("🔷 " + "**" + msgArgs + "**" + " 🔷").then(messageReaction => {
@@ -123,7 +123,7 @@ bot.on('message', message=>{
             });
             break;
         // Owner
-        case 'I':
+        case ';I':
             if(args[1] === "Owner?"){
                 if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('No your not!')
             //  .then(msg => msg.delete(5000));
@@ -133,13 +133,13 @@ bot.on('message', message=>{
             }
             break;
         // Purge
-        case 'purge': 
+        case ';purge': 
         if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             if(!args[1]) return message.reply('Error please define second arg')
             message.channel.bulkDelete(args[1]);
             break;
         // Kick
-        case 'kick':
+        case ';kick':
         if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             
             const users1 = message.mentions.users.first();
@@ -161,7 +161,7 @@ bot.on('message', message=>{
             }
             break;
         // Ban
-        case 'ban':
+        case ';ban':
         if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             const users2 = message.mentions.users.first();
             if(users2) {
@@ -178,7 +178,7 @@ bot.on('message', message=>{
             }
             break;
         // Mute
-        case 'mute':
+        case ';mute':
         if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             let person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]))
             if(!person) return message.reply("Cloudn't find that member!");
