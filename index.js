@@ -187,7 +187,6 @@ bot.on('message', message=>{
             let muterole = message.guild.roles.find(role => role.name === "Mute");
 
             if (!muterole) return message.reply("Cloudn't find that role!");
-            if (!mainrole) return message.reply("Cloudn't find that role!");
 
             let time = args[2];
             if(!time){
