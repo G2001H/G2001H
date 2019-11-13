@@ -16,19 +16,6 @@ bot.on('ready', () =>{
     bot.user.setActivity('G2001H', {type: "WATCHING"}).catch(console.error);
 })
 
-// Player Join
-bot.on('guildMemberAdd', member =>{
-    const channel = member.guild.channels.find(channel => channel.name === "welcome");
-    if(!channel) return;
-    channel.send(`Welcome to our server, ${member}, please read rules in rules channel!`)
-});
-
-bot.on('guildMemberRemove', member =>{
-    const channel2 = member.guild.channels.find(channel => channel.name === "goodbye");
-    if(!channel2) return;
-    channel2.send(`@${member}, left the server!`)
-})
-
 // Bot Commands
 bot.on('message', message=>{
     let args = message.content.substring(PREFIX.length).split(" ");
@@ -51,7 +38,7 @@ bot.on('message', message=>{
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Owners**')
                 .addField('**Prefix:**', PREFIX)
-                .addField('**Owner Commands:**', '(purge), (kick), (mute), (ban), (Im Owner?), (poll)')
+                .addField('**Owner Commands:**', '(purge), (kick), (mute), (ban), (I Owner?), (poll)')
                  .setFooter('This bot is By: G2001H#7660')
                   message.channel.send(embed5);
             break;
@@ -136,7 +123,7 @@ bot.on('message', message=>{
             });
             break;
         // Owner
-        case 'Ima':
+        case 'I':
             if(args[1] === "Owner?"){
                 if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('No your not!')
             //  .then(msg => msg.delete(5000));
