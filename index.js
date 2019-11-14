@@ -54,7 +54,7 @@ bot.on('message', message=>{
         // 8-ball
         case ';8-ball':
             const argumantstwo = args.slice(1).join(" ");
-            if(argumantstwo) return message.reply('You need to ask anything')
+            if(!argumantstwo) return message.reply('You need to ask anything!')
             message.reply(textrandom[Math.floor(Math.random() * textrandom.length)])
             break;
          // Server
