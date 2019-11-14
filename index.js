@@ -8,7 +8,7 @@ const {
 } = require('discord.js');
 const bot = new Client();
 const PREFIX = '';
-const textrandom = ["Yes","No"];
+const textrandom = ["Yes","No","Yes","No","Yes","No"];
 
 
 // Check if bot is on
@@ -32,7 +32,7 @@ bot.on('message', message=>{
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members**')
                 .addField('**Prefix:**', ";")
-                .addField('**Free Commands:**', '(Server Info), (Player Info), (ping), (hello), (dog), (cat), (quotes), (facts), (Im Verified?)')
+                .addField('**Free Commands:**', '(Server Info), (Player Info), (ping), (hello), (dog), (cat), (quotes), (facts), (Im Verified?), (8-ball)')
                 .setFooter('This bot is By: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
@@ -53,8 +53,9 @@ bot.on('message', message=>{
             break;
         // 8-ball
         case ';8-ball':
-            args.slice(1).join(" ");
-            message.channel.send(textrandom[Math.floor(Math.random() * textrandom.length)])
+            const argumantstwo = args.slice(1).join(" ");
+            if(argumantstwo) return message.reply('You need to ask anything')
+            message.reply(textrandom[Math.floor(Math.random() * textrandom.length)])
             break;
          // Server
         case ';Server':
