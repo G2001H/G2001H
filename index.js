@@ -8,6 +8,7 @@ const {
 } = require('discord.js');
 const bot = new Client();
 const PREFIX = '';
+const textrandom = ["Yes","No"];
 
 
 // Check if bot is on
@@ -49,6 +50,11 @@ bot.on('message', message=>{
         // Hello
         case ';hello': 
             message.channel.send('hello guys!');
+            break;
+        // 8-ball
+        case ';8-ball':
+            args.slice(1).join(" ");
+            message.channel.send(textrandom[Math.floor(Math.random() * textrandom.length)])
             break;
          // Server
         case ';Server':
