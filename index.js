@@ -34,7 +34,7 @@ bot.on('message', message=>{
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members**')
                 .addField('**Prefix:**', ";")
-                .addField('**Free Commands:**', '(Server Info), (Player Info), (ping), (hello), (dog), (cat), (quotes), (facts), (Im Verified?), (8-ball)')
+                .addField('**Free Commands:**', '(Server Info), (Player Info), (ping), (hello), (dog), (cat), (quotes), (facts), (Im Verified?), (8-ball), (Truth), (Dare)')
                 .setFooter('This bot is By: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
@@ -59,15 +59,13 @@ bot.on('message', message=>{
             if(!argumantstwo) return message.reply('You need to ask anything!')
             message.reply(textrandom[Math.floor(Math.random() * textrandom.length)])
             break;
-        // Truth or Dare
-        case ';play':
-            message.reply("Truth or Dare? (say ;play Truth or ;play Dare)");
-            if(args[1] === "Truth"){
+        // Truth
+        case ';Truth':
             message.reply(truths[Math.floor(Math.random() * truths.length)])
-            }
-            if(args[1] === "Dare"){
+            break;
+        // Dare
+        case ';Dare':
             message.reply(dares[Math.floor(Math.random() * dares.length)])
-            }
             break;
          // Server
         case ';Server':
