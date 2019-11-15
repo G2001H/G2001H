@@ -34,14 +34,14 @@ bot.on('message', message=>{
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members**')
                 .addField('**Prefix:**', ";")
-                .addField('**Free Commands:**', '(Server Info), (Player Info), (ping), (hello), (dog), (cat), (quotes), (facts), (Im Verified?), (8-ball), (Truth), (Dare)')
+                .addField('**Free Commands:**', `;Server Info`, `;Player Info`, `;ping`, `;hello`, `;dog`, `;cat`, `;quotes`, `;facts`, `;Im Verified?`, `;8-ball`, `;Truth`, `;Dare`)
                 .setFooter('This bot is By: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Owners**')
                 .addField('**Prefix:**', ";")
-                .addField('**Owner Commands:**', '(purge), (kick), (mute), (ban), (I Owner?), (poll)')
+                .addField('**Owner Commands:**', `;purge`, `;kick`, `;mute`, `;ban`, `;I Owner?`, `;poll`)
                  .setFooter('This bot is By: G2001H#7660')
                   message.channel.send(embed5);
             break;
