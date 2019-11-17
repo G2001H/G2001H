@@ -29,12 +29,12 @@ bot.on('message', message=>{
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         // Help
-        case ';help':
+        case ';Help':
                 const embed4 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members**')
                 .addField('**Prefix:**', ";")
-                .addField('**Free Commands:**', "`;Info Server`, `;Info [@player]`, `;Ping`, `;Hello`, `;Dog`, `;Cat`, `;Quotes`, `;Facts`, `;Im Verified?`, `;Im Owner?`, `;8-ball`, `;Truth`, `;Dare`")
+                .addField('**Free Commands:**', "`;Help`, `;Info Server`, `;Info [@player]`, `;Ping`, `;Hello`, `;Dog`, `;Cat`, `;Quotes`, `;Facts`, `;Im Verified?`, `;Im Owner?`, `;8-ball`, `;Truth`, `;Dare`")
                 .setFooter('This bot is By: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
