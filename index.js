@@ -34,24 +34,24 @@ bot.on('message', message=>{
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members**')
                 .addField('**Prefix:**', ";")
-                .addField('**Free Commands:**', "`;Server Info`, `;Player Info`, `;ping`, `;hello`, `;dog`, `;cat`, `;quotes`, `;facts`, `;Im Verified?`, `;8-ball`, `;Truth`, `;Dare`")
+                .addField('**Free Commands:**', "`;Info Server`, `;Info [@player]`, `;Ping`, `;Hello`, `;Dog`, `;Cat`, `;Quotes`, `;Facts`, `;Im Verified?`, `;Im Owner?`, `;8-ball`, `;Truth`, `;Dare`")
                 .setFooter('This bot is By: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Owners**')
                 .addField('**Prefix:**', ";")
-                .addField('**Owner Commands:**', "`;purge`, `;kick`, `;mute`, `;ban`, `;I Owner?`, `;poll`")
+                .addField('**Owner Commands:**', "`;Purge`, `;Kick`, `;Mute`, `;Ban`, `;Im Owner?`, `;Poll`, `;Invite`")
                  .setFooter('This bot is By: G2001H#7660')
                   message.channel.send(embed5);
             break;
         // Ping
-        case ';ping': 
+        case ';Ping': 
             message.reply('Pong! :ping_pong:');
             break;
         // Hello
-        case ';hello': 
-            message.channel.send('hello guys!');
+        case ';Hello': 
+            message.reply('hello!');
             break;
         // 8-ball
         case ';8-ball':
@@ -67,9 +67,9 @@ bot.on('message', message=>{
         case ';Dare':
             message.reply(dares[Math.floor(Math.random() * dares.length)])
             break;
-         // Server
-        case ';Server':
-            if(args[1] === "Info"){
+         // Server&Player
+        case ';Info':
+            if(args[1] === "Server"){
                 const embed = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Server Information**')
@@ -79,49 +79,48 @@ bot.on('message', message=>{
                 .addField('Members Count:', message.guild.memberCount)
                 .setFooter('This bot is By: G2001H#7660')
                  message.channel.send(embed);
-            }else{
-                message.reply('Invalid Argument!')
             }
-            break;
-        // Player
-        case ';Player':
-            if(args[1] === "Info"){
+            const usersnms = message.mentions.users.first();
+            if(usersnms){
+            const membernames = message.guild.member(usersnms);
+            if(membernames){
                 const embed2 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Player Information**')
-                .addField('Player Name:', message.author.username)
-                .addField('Created:', message.author.createdAt)
-                .setThumbnail(message.author.avatarURL)
+                .addField('Player Name&Tag:', usersnms.tag)
+                .addField('Created:', usersnms.createdAt)
+                .setThumbnail(usersnms.avatarURL)
                 .setFooter('This bot is By: G2001H#7660')
                 message.channel.send(embed2);
-            }else{
-                 message.reply('Invalid Argument!')
+                }
             }
             break;
-        // Member
+        // Owner
         case ';Im':
-            if(args[1] === "Verified?"){
-                if(!message.member.roles.find(r => r.name === "Verified")) return message.reply('No your not!')
+            if(args[1] === "Owner?"){
+                if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('No your not!')
             //  .then(msg => msg.delete(5000));
                 message.reply('Yes you are')
-            }else{
-                message.reply('Invalid Argument!')
+            }
+            if(args[1] === "Verified?"){
+                if(!message.member.roles.find(r => r.name === "Verified")) return message.reply('No your not!')
+                message.reply('Yes you are')
             }
             break;
         // Image Dog
-        case ';dog':
+        case ';Dog':
             dogs(message);
             break;
         // Image Cat
-        case ';cat': 
+        case ';Cat': 
             cats(message);
             break;
         // Image Quotes
-        case ';quotes': 
+        case ';Quotes': 
             quotes(message);
             break;
         // Image Facts
-        case ';facts': 
+        case ';Facts': 
             fact(message);
             break;
 
@@ -130,7 +129,7 @@ bot.on('message', message=>{
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         // Poll
-        case ';poll':
+        case ';Poll':
             if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             let msgArgs = args.slice(1).join(" ");
             message.channel.send("🔷 " + "**" + msgArgs + "**" + " 🔷").then(messageReaction => {
@@ -139,24 +138,23 @@ bot.on('message', message=>{
                 message.delete(1000).catch(console.error);
             });
             break;
-        // Owner
-        case ';I':
-            if(args[1] === "Owner?"){
-                if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('No your not!')
-            //  .then(msg => msg.delete(5000));
-                message.reply('Yes you are')
-            }else{
-                message.reply('Invalid Argument!')
-            }
-            break;
+        // Invite
+        case ';Invite':
+            if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
+            const embeds2 = new Discord.RichEmbed()
+            .setColor(0xF2FF00)
+            .setDescription("**Click** [here](https://discordapp.com/oauth2/authorize?client_id=643184729478266932&scope=bot&permissions=8) **to Invite the bot!**")
+            message.author.send(embeds2)
+            message.reply("Check DM's")
+        break;
         // Purge
-        case ';purge': 
+        case ';Purge': 
         if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             if(!args[1]) return message.reply('Error please define second arg')
             message.channel.bulkDelete(args[1]);
             break;
         // Kick
-        case ';kick':
+        case ';Kick':
         if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             
             const users1 = message.mentions.users.first();
@@ -178,7 +176,7 @@ bot.on('message', message=>{
             }
             break;
         // Ban
-        case ';ban':
+        case ';Ban':
         if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             const users2 = message.mentions.users.first();
             if(users2) {
@@ -195,7 +193,7 @@ bot.on('message', message=>{
             }
             break;
         // Mute
-        case ';mute':
+        case ';Mute':
         if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             let person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]))
             if(!person) return message.reply("Cloudn't find that member!");
