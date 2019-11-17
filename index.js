@@ -243,7 +243,6 @@ function dogs(message){
         $ = cheerio.load(responseBody);
         var links = $(".image a.link");
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-        console.log(urls);
         if (!urls.length) {  
             return;
         }
@@ -267,7 +266,6 @@ function cats(message){
         $ = cheerio.load(responseBody);
         var links = $(".image a.link");
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-        console.log(urls);
         if (!urls.length) {  
             return;
         }
@@ -291,7 +289,6 @@ function quotes(message){
         $ = cheerio.load(responseBody);
         var links = $(".image a.link");
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-        console.log(urls);
         if (!urls.length) {  
             return;
         }
@@ -315,7 +312,6 @@ function fact(message){
         $ = cheerio.load(responseBody);
         var links = $(".image a.link");
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-        console.log(urls);
         if (!urls.length) {  
             return;
         }
