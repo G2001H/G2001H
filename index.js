@@ -39,14 +39,14 @@ bot.on('message', message=>{
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members**')
                 .addField('**Prefix:**', ";")
-                .addField('**Free Commands:**', "`;Help`, `;Info Server`, `;Info [@player]`, `;Ping`, `;Hello`, `;Dog`, `;Cat`, `;Quotes`, `;Facts`, `;Im Verified?`, `;Im Owner?`, `;8-ball`, `;Truth`, `;Dare`")
+                .addField('**Free Commands:**', "`;Help`,`;Kill`, `;Info Server`, `;Info [@player]`, `;Ping`, `;Hello`, `;Dog`, `;Cat`, `;Quotes`, `;Facts`, `;Im Verified?`, `;Im Owner?`, `;8-ball`, `;Truth`, `;Dare`")
                 .setFooter('This bot is By: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Owners**')
                 .addField('**Prefix:**', ";")
-                .addField('**Owner Commands:**', "`;Purge`, `;Kick`, `;Mute`, `;Ban`, `;Im Owner?`, `;Poll`, `;Invite`")
+                .addField('**Owner Commands:**', "`;Purge`, `;Kick`,`;Vote`, `;Mute`, `;Ban`, `;Im Owner?`, `;Poll`, `;Invite`")
                  .setFooter('This bot is By: G2001H#7660')
                   message.channel.send(embed5);
             break;
@@ -112,6 +112,12 @@ bot.on('message', message=>{
                 message.reply('Yes you are')
             }
             break;
+        // Kill
+        case ';Kill':
+            let msgArgs3 = args.slice(1).join(" ");
+            message.channel.send(msgArgs3 + " Was killed**")
+                message.delete(1000).catch(console.error);
+            break;
         // Image Dog
         case ';Dog':
             dogs(message);
@@ -133,14 +139,6 @@ bot.on('message', message=>{
 //OWNER COMMANDS:
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        
-        // Kill
-        case ';Kill':
-            if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions");
-            let msgArgs3 = args.slice(1).join(" ");
-            message.channel.send(msgArgs3 + " Was killed**")
-                message.delete(1000).catch(console.error);
-            break;
         // Poll
         case ';Poll':
             if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions");
