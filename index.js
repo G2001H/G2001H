@@ -142,7 +142,7 @@ bot.on('message', message=>{
         case ';Vote':
             if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
             let msgArgs2 = args.slice(1).join(" ");
-            message.channel.send("**" + msgArgs2 + "**").then(messageReaction => {
+            message.channel.send("**Vote for** " + msgArgs2 + " **Is he trusted? Yes** :white_check_mark: **or No** :negative_squared_cross_mark:").then(messageReaction => {
                 messageReaction.react("✅");
                 messageReaction.react("❎");
                 message.delete(1000).catch(console.error);
