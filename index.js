@@ -138,6 +138,16 @@ bot.on('message', message=>{
                 message.delete(1000).catch(console.error);
             });
             break;
+        // Vote
+        case ';Vote':
+            if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
+            let msgArgs2 = args.slice(1).join(" ");
+            message.channel.send("**" + msgArgs2 + "**").then(messageReaction => {
+                messageReaction.react("✅");
+                messageReaction.react("❎");
+                message.delete(1000).catch(console.error);
+            });
+            break;
         // Invite
         case ';Invite':
             if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
