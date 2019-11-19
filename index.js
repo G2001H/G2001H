@@ -115,7 +115,7 @@ bot.on('message', message=>{
         // Kill
         case ';Kill':
             let msgArgs3 = args.slice(1).join(" ");
-            message.channel.send(msgArgs3 + " **Was Killed by** " + "@" + message.author.tag + " 🔪")
+            message.channel.send(msgArgs3 + " **Was Killed by** " + "@" + `${message.author}` + " 🔪")
                 message.delete(1000).catch(console.error);
             break;
         // Image Dog
