@@ -15,8 +15,13 @@ const dares = ["You have to delete five people on Instagram. Name them.","Descri
 
 // Check if bot is on
 bot.on('ready', () =>{
-    console.log('This bot is online!');
-    bot.user.setActivity('G2001H', {type: "WATCHING"}).catch(console.error);
+    console.log('Bot is ON');
+    let games = ["G2001H"];
+    let types = ["WATCHING", "STREAMING", "PLAYING", "LISTENING"]
+    setInterval(() => {
+        bot.user.setActivity(games[Math.floor(Math.random()* games.length)],
+        {url: "https://twitch.tv/G2001H_Developer", type: (types[Math.floor(Math.random()* types.length)])})
+    }, 10000)
 })
 
 // Bot Commands
