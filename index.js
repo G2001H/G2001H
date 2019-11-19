@@ -128,9 +128,17 @@ bot.on('message', message=>{
 //OWNER COMMANDS:
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
+        
+        // Kill
+        case ';Kill':
+            if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions"));
+            let msgArgs3 = args.slice(1).join(" ");
+            message.channel.send(msgArgs3 + " Was killed**")
+                message.delete(1000).catch(console.error);
+            break;
         // Poll
         case ';Poll':
-            if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
+            if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions"));
             let msgArgs = args.slice(1).join(" ");
             message.channel.send("🔷 " + "**" + msgArgs + "**" + " 🔷").then(messageReaction => {
                 messageReaction.react("👍");
@@ -140,7 +148,7 @@ bot.on('message', message=>{
             break;
         // Vote
         case ';Vote':
-            if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
+           if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions"));
             let msgArgs2 = args.slice(1).join(" ");
             message.channel.send("**Vote for** " + msgArgs2 + " **Is he trusted? Yes** :white_check_mark: **or No** :negative_squared_cross_mark:").then(messageReaction => {
                 messageReaction.react("✅");
@@ -150,7 +158,7 @@ bot.on('message', message=>{
             break;
         // Invite
         case ';Invite':
-            if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
+            if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions"));
             const embeds2 = new Discord.RichEmbed()
             .setColor(0xF2FF00)
             .setDescription("**Click** [here](https://discordapp.com/oauth2/authorize?client_id=643184729478266932&scope=bot&permissions=8) **to Invite the bot!**")
@@ -159,13 +167,13 @@ bot.on('message', message=>{
         break;
         // Purge
         case ';Purge': 
-        if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
+        if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions"));
             if(!args[1]) return message.reply('Error please define second arg')
             message.channel.bulkDelete(args[1]);
             break;
         // Kick
         case ';Kick':
-        if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
+        if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions"));
             
             const users1 = message.mentions.users.first();
 
@@ -187,7 +195,7 @@ bot.on('message', message=>{
             break;
         // Ban
         case ';Ban':
-        if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
+       if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions"));
             const users2 = message.mentions.users.first();
             if(users2) {
                 const member = message.guild.member(users2);
@@ -204,7 +212,7 @@ bot.on('message', message=>{
             break;
         // Mute
         case ';Mute':
-        if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('You dont have permission to use this command!')
+         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions"));
             let person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]))
             if(!person) return message.reply("Cloudn't find that member!");
 
