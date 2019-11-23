@@ -133,12 +133,13 @@ bot.on('message', message=>{
                 if(error) throw error
                 const Embed = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
-                .setTitle('**Minecraft Server Information**')
+                .setTitle(':scroll: **Minecraft Server Information** :scroll:')
                 .addField('**__Server IP:__**', reponse.host)
                 .addField('**__Server Version:__**', reponse.version)
+                .addField('**__Server Port:__**', reponse.port)
                 .addField('**__Online Players:__**', reponse.onlinePlayers)
                 .addField('**__Max Players:__**', reponse.maxPlayers)
-                .addField('**__Server Votes:__**', reponse.votes)
+                .setThumbnail(reponse.favicon)
                 .setFooter('Bot by: G2001H#7660')
                 message.channel.send(Embed)
             });
