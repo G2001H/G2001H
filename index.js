@@ -130,7 +130,7 @@ bot.on('message', message=>{
             if(!args[1]) return message.channel.send('You need to type Minecraft IP Server!')
             ping(args[1], (error, reponse) =>{
                 if(error) throw error
-                const Embed = new RichEmbed()
+                const Embed = new Discord.RichEmbed()
                 .setTitle('Server Status')
                 .addField('Server IP', reponse.host)
                 .addField('Server Version', reponse.version)
