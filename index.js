@@ -139,7 +139,6 @@ bot.on('message', message=>{
                 .addField('**__Server Port:__**', reponse.port)
                 .addField('**__Online Players:__**', reponse.onlinePlayers)
                 .addField('**__Max Players:__**', reponse.maxPlayers)
-                .setThumbnail(reponse.favicon)
                 .setFooter('Bot by: G2001H#7660')
                 message.channel.send(Embed)
             });
