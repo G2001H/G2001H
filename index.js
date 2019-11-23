@@ -40,14 +40,14 @@ bot.on('message', message=>{
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members:**')
                 .addField('**__Prefix:__**', "`;`")
-                .addField('**__Free Commands:__**', "`;Help`, `;Minecraft <ServerID>`, `;Kill`, `;Info Server`, `;Info <@player>`, `;Ping`, `;Hello`, `;Im Verified?`, `;Im Owner?`, `;8-ball`, `;Truth`, `;Dare`")
+                .addField('**__Free Commands:__**', "`;Help`, `;Minecraft <ServerID>`, `;Kill <Member>`, `;Info Server`, `;Info <player>`, `;Ping`, `;Hello`, `;Im Verified?`, `;Im Owner?`, `;8-ball <Text>`, `;Truth`, `;Dare`")
                 .setFooter('Bot by: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Owners:**')
                 .addField('**__Prefix:__**', "`;`")
-                .addField('**__Owner Commands:__**', "`;Purge`, `;Kick`, `;Vote`, `;Mute`, `;Ban`, `;Poll`, `;Invite`, `;ServerName`")
+                .addField('**__Owner Commands:__**', "`;Purge <1/100>`, `;Kick <Member>`, `;Vote <Member>`, `;Mute <Member>`, `;Ban <Member>`, `;Poll <Text>`, `;Invite`, `;ServerName <Text>`")
                  .setFooter('Bot by: G2001H#7660')
                   message.channel.send(embed5);
             break;
@@ -129,7 +129,7 @@ bot.on('message', message=>{
         case pref + 'Minecraft':
             if(!args.slice(1).join(" ")) return message.reply('You need to type Minecraft IP Server!')
             ping( args.slice(1).join(" "), (error, reponse) =>{
-                if(error) throw error
+                if(error) return message.reply('Invalid Server! (' + args[1] + ')')
                 const Embed = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle(':scroll: **Minecraft Server Information** :scroll:')
