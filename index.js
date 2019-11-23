@@ -42,14 +42,14 @@ bot.on('message', message=>{
                 .setTitle('**Commands For Members:**')
                 .addField('**__Prefix:__**', "`;`")
                 .addField('**__Free Commands:__**', "`;Help`, `;Kill`, `;Info Server`, `;Info [@player]`, `;Ping`, `;Hello`, `;Im Verified?`, `;Im Owner?`, `;8-ball`, `;Truth`, `;Dare`")
-                .setFooter('This bot is By: G2001H#7660')
+                .setFooter('Bot by: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Owners:**')
                 .addField('**__Prefix:__**', "`;`")
                 .addField('**__Owner Commands:__**', "`;Purge`, `;Kick`, `;Vote`, `;Mute`, `;Ban`, `;Poll`, `;Invite`, `;ServerSetName`")
-                 .setFooter('This bot is By: G2001H#7660')
+                 .setFooter('Bot by: G2001H#7660')
                   message.channel.send(embed5);
             break;
         // Ping
@@ -128,15 +128,18 @@ bot.on('message', message=>{
             }};
             break;
         case pref + 'Minecraft':
-            if(!args[1]) return message.channel.send('You need to type Minecraft IP Server!')
+            if(!args[1]) return message.reply('You need to type Minecraft IP Server!')
             ping(args[1], (error, reponse) =>{
                 if(error) throw error
                 const Embed = new Discord.RichEmbed()
-                .setTitle('Server Status')
-                .addField('Server IP', reponse.host)
-                .addField('Server Version', reponse.version)
-                .addField('Online Players', reponse.onlinePlayers)
-                .addField('Max Players', reponse.maxPlayers)
+                .setColor(0xFF00A2)
+                .setTitle('**Minecraft Server Information**')
+                .addField('**__Server IP:__**', reponse.host)
+                .addField('**__Server Version:__**', reponse.version)
+                .addField('**__Online Players:__**', reponse.onlinePlayers)
+                .addField('**__Max Players:__**', reponse.maxPlayers)
+                .addField('**__Server Votes:__**', reponse.votes)
+                .setFooter('Bot by: G2001H#7660')
                 message.channel.send(Embed)
             });
             break;
