@@ -133,16 +133,15 @@ bot.on('message', message=>{
                 if(error) throw error
                 const Embed = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
-                .setTitle(':scroll: **Minecraft Server Information** :scroll:')
-                .addField('**__Server IP:__**', reponse.host)
-                .addField('**__Server Version:__**', reponse.version)
-                .addField('**__Server Port:__**', reponse.port)
-                .addField('**__Online Players:__**', reponse.onlinePlayers)
-                .addField('**__Max Players:__**', reponse.maxPlayers)
+                .setTitle(':Minecraft: **Minecraft Server Information** :Minecraft:')
+                .addField(':Minecraft: **__Server IP:__** :Minecraft:', reponse.host)
+                .addField(':Minecraft: **__Server Version:__** :Minecraft:', reponse.version)
+                .addField(':Minecraft: **__Server Port:__** :Minecraft:', reponse.port)
+                .addField(':Minecraft: **__Online Players:__** :Minecraft:', reponse.onlinePlayers)
+                .addField(':Minecraft: **__Max Players:__** :Minecraft:', reponse.maxPlayers)
                 .setFooter('Bot by: G2001H#7660')
                 message.channel.send(Embed)
             });
-            break;
     //  case pref + 'test': 
     //     message.reply("?????")
     //      setTimeout(function(){
