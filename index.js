@@ -13,6 +13,7 @@ const textrandom = ["Yes","No","Yes","No","Yes","No"];
 const truths = ["What is the worst date you’ve ever been on?","Who is your current crush?","How long have you gone without a shower?","Would you rather eat dog food or cat food?","If your crush told you he liked your best friend, what would you do?","Who's hotter? You or your friend?","Would you let a friend cheat on a test?","Have you ever been late to class?","Who would you never ever want to sit next to in class?","Have you ever failed a class?","How tall do you want to be?","What's your dream job?","What are you most excited about?","Basketball, baseball, or football?","How many hours would you spend online if you didn't have school or homework?"];
 const dares = ["You have to delete five people on Instagram. Name them.","Describe the person of your dreams.","Tell us your most embarrassing vomit story.","Tell us your biggest secret.","Talk to a pillow like it's your crush.","Sing a song","Talk without closing your mouth.","Send us a pic of you","Send last pic in your gallery","Send your first pic in Gallery","Send us a childhood pic of yours","Make us to laught","Write my name Letter by Letter"];
 const ping = require('minecraft-server-util');
+//const token = 'NjQ0NjM4MDg4MTQ4Mjg3NDg5.Xdh7mQ.ofhzywbzIzA6dgoWsLSgwwic4NY';
 
 // Check if bot is on
 bot.on('ready', () =>{
