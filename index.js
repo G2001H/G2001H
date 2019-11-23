@@ -133,12 +133,12 @@ bot.on('message', message=>{
                 if(error) throw error
                 const Embed = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
-                .setTitle('<a:Minecraft:628740525914325033> **Minecraft Server Information** <a:Minecraft:628740525914325033>')
-                .addField('<a:Minecraft:628740525914325033> **__Server IP:__** <a:Minecraft:628740525914325033>', reponse.host)
-                .addField('<a:Minecraft:628740525914325033> **__Server Version:__** <a:Minecraft:628740525914325033>', reponse.version)
-                .addField('<a:Minecraft:628740525914325033> **__Server Port:__** <a:Minecraft:628740525914325033>', reponse.port)
-                .addField('<a:Minecraft:628740525914325033> **__Online Players:__** <a:Minecraft:628740525914325033>', reponse.onlinePlayers)
-                .addField('<a:Minecraft:628740525914325033> **__Max Players:__** <a:Minecraft:628740525914325033>', reponse.maxPlayers)
+                .setTitle(':scroll: **Minecraft Server Information** :scroll:')
+                .addField('**__Server IP:__**', reponse.host)
+                .addField('**__Server Version:__**', reponse.version)
+                .addField('**__Server Port:__**', reponse.port)
+                .addField('**__Online Players:__**', reponse.onlinePlayers)
+                .addField('**__Max Players:__**', reponse.maxPlayers)
                 .setFooter('Bot by: G2001H#7660')
                 message.channel.send(Embed)
             });
