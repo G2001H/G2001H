@@ -128,8 +128,8 @@ bot.on('message', message=>{
             }};
             break;
         case pref + 'Minecraft':
-            if(!args[1]) return message.reply('You need to type Minecraft IP Server!')
-            ping(args[1], (error, reponse) =>{
+            if(!args.slice(1).join(" ")) return message.reply('You need to type Minecraft IP Server!')
+            ping( args.slice(1).join(" "), (error, reponse) =>{
                 if(error) throw error
                 const Embed = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
