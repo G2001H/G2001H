@@ -142,6 +142,7 @@ bot.on('message', message=>{
                 .setFooter('Bot by: G2001H#7660')
                 message.channel.send(Embed)
             });
+            break;
     //  case pref + 'test': 
     //     message.reply("?????")
     //      setTimeout(function(){
