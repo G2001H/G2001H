@@ -40,20 +40,24 @@ bot.on('message', message=>{
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members:**')
                 .addField('**__Prefix:__**', "`;`")
-                .addField('**__Free Commands:__**', "`;Help`,`;Avatar <@member>`, `;Minecraft <ServerID>`, `;Kill <@member>`, `;Info Server`, `;Info <@member>`, `;Ping`, `;Hello`, `;Im Verified?`, `;Im Owner?`, `;8-ball <Text>`, `;Truth`, `;Dare`")
+                .addField('**__Free Commands:__**', "`;Help`, `;Minecraft <ServerID>`, `;Kill <@player>`, `;Info Server`, `;Info <@player>`, `;Ping`, `;Hello`, `;Im Verified?`, `;Im Owner?`, `;8-ball <Text>`, `;Truth`, `;Dare`")
                 .setFooter('Bot by: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Owners:**')
                 .addField('**__Prefix:__**', "`;`")
-                .addField('**__Owner Commands:__**', "`;Purge <1-100>`, `;Kick <@member>`, `;Vote <@member>`, `;Mute <@member>`, `;Ban <@member>`, `;Poll <Text>`, `;Invite`, `;ServerSetName <Text>`")
-                .setFooter('Bot by: G2001H#7660')
-                message.channel.send(embed5);
+                .addField('**__Owner Commands:__**', "`;Purge <1-100>`, `;Kick <@player>`, `;Vote <@player>`, `;Mute <@player>`, `;Ban <@player>`, `;Poll <Text>`, `;Invite`, `;ServerSetName <Text>`")
+                 .setFooter('Bot by: G2001H#7660')
+                  message.channel.send(embed5);
             break;
         // Ping
         case pref + 'Ping': case pref + 'ping':
             message.reply('Pong! :ping_pong:');
+            break;
+        // Don't Ping!
+        case `${message.guild.owner}`:
+            if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Don\'t ping the owner or you will be banned!');
             break;
         // Hello
         case pref + 'Hello': case pref + 'hello':
@@ -136,6 +140,7 @@ bot.on('message', message=>{
                 message.delete(1000).catch(console.error);
             }};
             break;
+        // Minecraft
         case pref + 'Minecraft': case pref + 'minecraft':
             if(!args[1]) return message.reply('You need to type Minecraft IP Server!')
             ping(args[1], (error, reponse) =>{
