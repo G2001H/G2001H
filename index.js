@@ -35,47 +35,57 @@ bot.on('message', message=>{
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         // Help
-        case pref + 'Help':
+        case pref + 'Help': case pref + 'help':
                 const embed4 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Members:**')
                 .addField('**__Prefix:__**', "`;`")
-                .addField('**__Free Commands:__**', "`;Help`, `;Minecraft <ServerID>`, `;Kill <Member>`, `;Info Server`, `;Info <player>`, `;Ping`, `;Hello`, `;Im Verified?`, `;Im Owner?`, `;8-ball <Text>`, `;Truth`, `;Dare`")
+                .addField('**__Free Commands:__**', "`;Help`,`;Avatar <@member>`, `;Minecraft <ServerID>`, `;Kill <@member>`, `;Info Server`, `;Info <@member>`, `;Ping`, `;Hello`, `;Im Verified?`, `;Im Owner?`, `;8-ball <Text>`, `;Truth`, `;Dare`")
                 .setFooter('Bot by: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle('**Commands For Owners:**')
                 .addField('**__Prefix:__**', "`;`")
-                .addField('**__Owner Commands:__**', "`;Purge <1/100>`, `;Kick <Member>`, `;Vote <Member>`, `;Mute <Member>`, `;Ban <Member>`, `;Poll <Text>`, `;Invite`, `;ServerName <Text>`")
-                 .setFooter('Bot by: G2001H#7660')
-                  message.channel.send(embed5);
+                .addField('**__Owner Commands:__**', "`;Purge <1-100>`, `;Kick <@member>`, `;Vote <@member>`, `;Mute <@member>`, `;Ban <@member>`, `;Poll <Text>`, `;Invite`, `;ServerSetName <Text>`")
+                .setFooter('Bot by: G2001H#7660')
+                message.channel.send(embed5);
             break;
         // Ping
-        case pref + 'Ping': 
+        case pref + 'Ping': case pref + 'ping':
             message.reply('Pong! :ping_pong:');
             break;
         // Hello
-        case pref + 'Hello': 
+        case pref + 'Hello': case pref + 'hello':
             message.reply('hello!');
             break;
-        // 8-ball
-        case pref + '8-ball':
+        // Avatar
+        case pref + 'Avatar': case pref + 'avatar':
+            const plrMentioned = message.mentions.users.first();
+            if(!plrMentioned) return message.reply("Cloudn't find that member!")
+            const embds = new Discord.RichEmbed()
+            .setColor(0xFF00A2)
+            .setTitle(`${plrMentioned.username}'s Avatar.`)
+            .setImage(plrMentioned.avatarURL);
+            message.channel.send(embds);
+            break;
+        // 8-Ball
+        case pref + '8-Ball': case pref + '8-ball':
             const argumantstwo = args.slice(1).join(" ");
             if(!argumantstwo) return message.reply('You need to ask anything!')
             message.reply(textrandom[Math.floor(Math.random() * textrandom.length)])
             break;
         // Truth
-        case pref + 'Truth':
+        case pref + 'Truth': case pref + 'truth':
             message.reply(truths[Math.floor(Math.random() * truths.length)])
             break;
         // Dare
-        case pref + 'Dare':
+        case pref + 'Dare': case pref + 'dare':
             message.reply(dares[Math.floor(Math.random() * dares.length)])
             break;
          // Server&Player
-        case pref + 'Info':
-            if(args[1] === "Server"){
+        case pref + 'Info': case pref + 'info':
+            if(args[1] === "Server" || args[1] === "server"){
                 const embed = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
                 .setTitle(':scroll: **Server Informations:** :scroll:')
@@ -105,19 +115,19 @@ bot.on('message', message=>{
             }
             break;
         // Owner&Verified
-        case pref + 'Im':
-            if(args[1] === "Owner?"){
+        case pref + 'Im': case pref + 'im':
+            if(args[1] === "Owner?" || args[1] === "owner?"){
                 if(!message.member.roles.find(r => r.name === "Owner")) return message.reply('No your not!')
             //  .then(msg => msg.delete(5000));
                 message.reply('Yes you are!')
             }
-            if(args[1] === "Verified?"){
+            if(args[1] === "Verified?" || args[1] === "verified?"){
                 if(!message.member.roles.find(r => r.name === "Verified")) return message.reply('No your not!')
                 message.reply('Yes you are!')
             }
             break;
         // Kill
-        case pref + 'Kill':
+        case pref + 'Kill': case pref + 'kill':
             const msgArgs3 = message.mentions.users.first();
             if(!msgArgs3) return message.reply('You need to ping a member!');{
             const memberss = message.guild.member(msgArgs3);
@@ -126,9 +136,9 @@ bot.on('message', message=>{
                 message.delete(1000).catch(console.error);
             }};
             break;
-        case pref + 'Minecraft':
-            if(!args.slice(1).join(" ")) return message.reply('You need to type Minecraft IP Server!')
-            ping( args.slice(1).join(" "), (error, reponse) =>{
+        case pref + 'Minecraft': case pref + 'minecraft':
+            if(!args[1]) return message.reply('You need to type Minecraft IP Server!')
+            ping(args[1], (error, reponse) =>{
                 if(error) return message.reply('Invalid Server! (' + args[1] + ')')
                 const Embed = new Discord.RichEmbed()
                 .setColor(0xFF00A2)
@@ -154,36 +164,36 @@ bot.on('message', message=>{
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         // Poll
-        case pref + 'Poll':
+        case pref + 'Poll': case pref + 'poll':
             if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions!");
             let msgArgs = args.slice(1).join(" ");
             if(!msgArgs) return message.reply("You need to say anything!")
             message.channel.send("🔷 " + "**" + msgArgs + "**" + " 🔷").then(messageReaction => {
                 messageReaction.react("👍");
                 messageReaction.react("👎");
-                message.delete(1000).catch(console.error);
+                message.delete(500).catch(console.error);
             });
             break;
         // Vote
-        case pref + 'Vote':
+        case pref + 'Vote': case pref + 'vote':
            if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions!");
             let msgArgs2 = message.mentions.users.first();
             if(!msgArgs2) return message.reply("Cloudn't find that member!");
             message.channel.send("**Vote for** " + msgArgs2 + " **Is he trusted? Yes** :white_check_mark: **or No** :negative_squared_cross_mark:").then(messageReaction => {
                 messageReaction.react("✅");
                 messageReaction.react("❎");
-                message.delete(1000).catch(console.error);
+                message.delete(500).catch(console.error);
             });
             break;
         // Change Guild Name 
-        case pref + 'ServerName':
+        case pref + 'ServerSetName': case pref + 'serversetname':
            if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions!");
             const argument = args.slice(1).join(" ")
             if(!argument) return message.reply('You need to specify a name for server!')
                 message.guild.setName(argument);
             break;
         // Invite
-        case pref + 'Invite':
+        case pref + 'Invite': case pref + 'invite':
             if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions!");
             const embeds2 = new Discord.RichEmbed()
             .setColor(0xF2FF00)
@@ -192,7 +202,7 @@ bot.on('message', message=>{
             message.reply("Check DM's")
         break;
         // Purge
-        case pref + 'Purge': 
+        case pref + 'Purge':  case pref + 'purge': case pref + 'p': case pref + 'P':
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions!");
             if(!args[1]) return message.reply('You need to tell me how much messages you want to delete!')
             message.channel.bulkDelete(args[1]);
@@ -200,10 +210,12 @@ bot.on('message', message=>{
                 .setColor(0xFF0000)
                 .setTitle('Succsessfuly deleted ' + args[1] + ' messages!')
                 .setFooter('Bot by: G2001H#7660')
-                message.channel.send(embedsss);
+                message.channel.send(embedsss).then(message => {
+                message.delete(2000).catch(console.error);
+                });
             break;
         // Kick
-        case pref + 'Kick':
+        case pref + 'Kick': case pref + 'kick':
         if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions!");
             
             const users1 = message.mentions.users.first();
@@ -225,7 +237,7 @@ bot.on('message', message=>{
             }
             break;
         // Ban
-       case pref + 'Ban':
+       case pref + 'Ban': case pref + 'ban':
        if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions!");
             const users2 = message.mentions.users.first();
             if(users2) {
@@ -242,7 +254,7 @@ bot.on('message', message=>{
             }
             break;
         // Mute
-        case pref + 'Mute':
+        case pref + 'Mute': case pref + 'mute':
          if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions!");
             let person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]))
             if(!person) return message.reply("Cloudn't find that member!");
