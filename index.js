@@ -265,7 +265,7 @@ bot.on('message', message=>{
             if(!person) return message.reply("Cloudn't find that member!");
 
             let mainrole = message.guild.roles.find(role => role.name === "Verified");
-            let muterole = message.guild.roles.find(role => role.name === "Mute");
+            let muterole = message.guild.roles.find(role => role.name === "Muted");
 
             if (!muterole) return message.reply("Cloudn't find that role!");
 
