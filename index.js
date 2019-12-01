@@ -68,7 +68,7 @@ bot.on('message', message=>{
             const plrMentioned = message.mentions.users.first();
             if(!plrMentioned) return message.reply("You didn't specify a member!")
             const embds = new Discord.RichEmbed()
-            .setColor(0xFF00A2)
+            .setColor("RANDOM")
             .setTitle(`${plrMentioned.username}'s Avatar.`)
             .setImage(plrMentioned.avatarURL);
             message.channel.send(embds);
@@ -201,7 +201,7 @@ bot.on('message', message=>{
         case pref + 'Invite': case pref + 'invite':
             if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply("You don't have permissions to invite the bot!");
             const embeds2 = new Discord.RichEmbed()
-            .setColor(0xF2FF00)
+            .setColor("RANDOM")
             .setDescription("**Click** [here](https://discordapp.com/oauth2/authorize?client_id=643184729478266932&scope=bot&permissions=8) **to Invite the bot!**")
             message.author.send(embeds2);
             message.reply("Check DM's");
