@@ -21,6 +21,11 @@ bot.on('ready', () =>{
         bot.user.setActivity(games[Math.floor(Math.random()* games.length)],
         {url: "https://twitch.tv/G2001H_Developer", type: (types[Math.floor(Math.random()* types.length)])})
     }, 10000)
+    let statuss = ["dnd", "idle", "online"] //"invisible"
+    setInterval(() => {
+    bot.user.setStatus(statuss[Math.floor(Math.random()* statuss.length)]) // dnd, idle, online, invisible
+    }, 10000)
+    bot.user.setUsername("[" + pref + "] G2001H's Bot")
 });
 
 // Bot Commands
@@ -35,7 +40,7 @@ bot.on('message', message=>{
         // Help
         case pref + 'Help': case pref + 'help':
                 const embed4 = new Discord.RichEmbed()
-                .setColor(0xFF00A2)
+                .setColor("RANDOM")
                 .setTitle('**Commands For Members:**')
                 .addField('**__Prefix:__**', "`;`")
                 .addField('**__Free Commands:__**', '`;Help`, `;Avatar <@Member>`, `;Minecraft <ServerID>`, `;Kill <@Member>`, `;Info Server`, `;Info <@Member>`, `;Ping`, `;Hello`, `;Im Verified?`, `;Im Owner?`, `;8-ball <Text>`, `;Truth`, `;Dare`'
@@ -43,7 +48,7 @@ bot.on('message', message=>{
                 .setFooter('Bot by: G2001H#7660')
                  message.channel.send(embed4);
                 const embed5 = new Discord.RichEmbed()
-                .setColor(0xFF00A2)
+                .setColor("RANDOM")
                 .setTitle('**Commands For Owners:**')
                 .addField('**__Prefix:__**', "`;`")
                 .addField('**__Owner Commands:__**', "`;Purge <1-100>`, `;Kick <@Member>`, `;Vote <@Member>`, `;Mute <@Member> <time>`, `;Ban <@Member>`, `;Poll <Text>`, `;Invite`, `;ServerSetName <Text>`")
@@ -86,7 +91,7 @@ bot.on('message', message=>{
         case pref + 'Info': case pref + 'info':
             if(args[1] === "Server" || args[1] === "server"){
                 const embed = new Discord.RichEmbed()
-                .setColor(0xFF00A2)
+                .setColor("RANDOM")
                 .setTitle(':scroll: **Server Informations:** :scroll:')
                 .addField(':star2: **__Server Name:__**', message.guild.name,true)
                 .addField(':star2: **__Server ID:__**', message.guild.id, true)
@@ -102,7 +107,7 @@ bot.on('message', message=>{
             const membernames = message.guild.member(usersnms);
             if(membernames){
                 const embed2 = new Discord.RichEmbed()
-                .setColor(0xFF00A2)
+                .setColor("RANDOM")
                 .setTitle(':scroll: **Member Information:** :scroll:')
                 .addField(':man_pouting: **__Member Name:__**', usersnms.tag, true)
                 .addField(':man_pouting: **__Member ID:__**', usersnms.id, true)
@@ -141,7 +146,7 @@ bot.on('message', message=>{
             ping(args[1], (error, reponse) =>{
                 if(error) return message.reply('Invalid Server! (' + args[1] + ')')
                 const Embed = new Discord.RichEmbed()
-                .setColor(0xFF00A2)
+                .setColor("RANDOM")
                 .setTitle(':scroll: **Minecraft Server Information** :scroll:')
                 .addField('**__Server IP:__**', reponse.host)
                 .addField('**__Server Version:__**', reponse.version)
@@ -207,7 +212,7 @@ bot.on('message', message=>{
             if(!args[1]) return message.reply('You didn\'t specify number how much messages you want to delete!');
             message.channel.bulkDelete(args[1]);
                 const embedsss = new Discord.RichEmbed()
-                .setColor(0xFF0000)
+                .setColor("RANDOM")
                 .setTitle('Succsessfuly deleted ' + args[1] + ' messages!')
                 .setFooter('Bot by: G2001H#7660')
                 message.channel.send(embedsss).then(message => {
