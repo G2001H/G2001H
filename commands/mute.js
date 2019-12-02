@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     let muterole = message.guild.roles.find(role => role.name === "Muted");
     let time = args[1];
     let reason = args.slice(2).join(' ');
-    let logs = message.guild.channels.find('name', config.logsChannel);
+    let logs = message.guild.channels.find(ch => ch.name === config.logsChannel);
     if(!person) return message.reply("You need to specify a member!");
     if(!time) return message.reply("You didn't specify a time!");
     if(!reason) return message.reply("You didn't specify a reason!");
