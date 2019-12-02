@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 const ping = require('minecraft-server-util');
 
 module.exports.run = async (bot, message, args) => {
