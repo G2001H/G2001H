@@ -17,6 +17,6 @@
     "random-puppy": "^1.1.0",
     "snekfetch": "^4.0.4"
   },
-  "logsChannel": "logs"
+  "logsChannel": "logs",
   "prefix": ";"
 }
