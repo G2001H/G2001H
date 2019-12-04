@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 module.exports.run = async (bot, message, args) => {
     let embed1 = new Discord.RichEmbed()
     .setColor("RANDOM")
-    .setDescription("**__Prefix:__** **;**")
+    .setDescription("**__Prefix:__** `;`")
     .setTitle('🕹️ **__All Commands:__** 🕹️')
     .addField('☑️ **__Free Commands:__**',`
         ;Help
