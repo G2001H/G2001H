@@ -25,8 +25,9 @@ module.exports.run = async (bot, message, args) => {
         }
         const embeds = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setTitle(`Image: ${search}`)
+        .setTitle(`Image ${search}`)
         .setImage(urls[0])
+        .setFooter('Bot by: G2001H#7660');
         message.channel.send(embeds);
     });
 }
