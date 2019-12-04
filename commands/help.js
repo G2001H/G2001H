@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
     .setColor("RANDOM")
     .setTitle('**Commands For Members:**')
     .addField('**__Prefix:__**', "`;`")
-    .addField('**__Free Commands:__**', '`;Help`, `;Ascii <Text>`, `;Triggered <@Member>`, `;Image <Text>`, `;Avatar <@Member>`, `;Minecraft <ServerID>`, `;Kill <@Member>`, `;ServerInfo`, `;Info <@Member>`, `;Ping`, `;Im Verified?`, `;Im Owner?`, `;8ball <Text>`, `;Truth`, `;Dare`')
+    .addField('**__Free Commands:__**', '`;Help`, `;Ascii <Text>`, `;Triggered <@Member>`, `;Image <Text>`, `;Avatar <@Member>`, `;Minecraft <ServerID>`, `;Kill <@Member>`, `;ServerInfo`, `;Info <@Member>`, `;Ping`, `;Im Owner?`, `;8ball <Text>`, `;Truth`, `;Dare`')
     .setFooter('Bot by: G2001H#7660')
     let embed2 = new Discord.RichEmbed()
     .setColor("RANDOM")
