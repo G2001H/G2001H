@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = ";";
+const pref = require("./package.json")
 
 client.on('ready', () =>{
     console.log('Bot is ON');
@@ -14,15 +14,15 @@ client.on('ready', () =>{
     setInterval(() => {
     client.user.setStatus(statuss[Math.floor(Math.random()* statuss.length)]) // dnd, idle, online, invisible
     }, 10000)
-    client.user.setUsername("[" + prefix + "] G2001H's Bot")
+    client.user.setUsername("[" + pref.prefix + "] G2001H's Bot")
 });
 
 client.on("message", message => {
 	if (message.author.bot) return; // check if is bot talking
 	if (message.author.bot || !message.guild) return;
-	if (!message.content.startsWith(prefix)) return;
+	if (!message.content.startsWith(pref.prefix)) return;
 	let command = message.content.split(" ")[0]; 
-	command = command.slice(prefix.length);
+	command = command.slice(pref.prefix.length);
 	let args = message.content.split(" ").slice(1);
 	try {
 		let commandFile = require(`./commands/${command.toLowerCase()}.js`);
