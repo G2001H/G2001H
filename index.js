@@ -4,7 +4,7 @@ const pref = require("./package.json")
 
 client.on('ready', () =>{
     console.log('Bot is ON');
-    let games = ["G2001H"];
+    let games = ["G2001H","Say ;Help"];
     let types = ["WATCHING", "STREAMING", "PLAYING", "LISTENING"]
     setInterval(() => {
         client.user.setActivity(games[Math.floor(Math.random()* games.length)],
