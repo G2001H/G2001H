@@ -13,6 +13,7 @@ module.exports.run = async (bot, message, args) => {
         ;Triggered
         ;Ascii
         ;Image
+        ;Images
         ;Avatar
         ;Minecraft
         ;Kill
