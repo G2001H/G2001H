@@ -4,6 +4,7 @@ var Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     var search = args.join(" ");
+    if(!search) return message.reply("`;Image <Text>`")
     var options = {
         url: "http://results.dogpile.com/serp?qc=images&q=" + search,
         method: "GET",
@@ -24,9 +25,8 @@ module.exports.run = async (bot, message, args) => {
         }
         const embeds = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setTitle(`Image ${search}`)
+        .setTitle(`Image: ${search}`)
         .setImage(urls[0])
-        .setFooter('Bot by: G2001H#7660');
         message.channel.send(embeds);
     });
 }
