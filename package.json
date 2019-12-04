@@ -1,5 +1,5 @@
 {
-  "name": "G2001H",
+  "name": "dash",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,8 @@
     "minecraft-server-util": "^1.0.2",
     "ms": "^2.1.2",
     "random-puppy": "^1.1.0",
-    "snekfetch": "^4.0.4"
+    "snekfetch": "^4.0.4",
+    "weather-js": "^2.0.0"
   },
   "logsChannel": "logs",
   "prefix": ";"
