@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
         if(membernames){
             const embed2 = new Discord.RichEmbed()
             .setColor("RANDOM")
-            .setTitle(':scroll: **Member Information:** :scroll:')
+            .setTitle(`:scroll: **${usersnms.username}'s Information:** :scroll:`)
             .addField(':man_pouting: **__Member Name:__**', usersnms.tag, true)
             .addField(':man_pouting: **__Member ID:__**', usersnms.id, true)
             .addField(':date: **__Created:__**', usersnms.createdAt)
