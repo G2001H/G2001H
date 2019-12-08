@@ -30,10 +30,10 @@ module.exports.run = async (bot, message, args) => {
         person.removeRole(mainrole.id);
         person.addRole(muterole.id);
         logs.send(embeds)
-        message.channel.send(`${person} has been temporarily muted for ${ms(ms(time))}!`);
+        message.channel.send(`${person} **has been temporarily muted for ${ms(ms(time))}!**`);
         setTimeout(function(){
         person.addRole(mainrole.id);
         person.removeRole(muterole.id);
-        message.channel.send(`${person} has been unmuted!`)
+        message.channel.send(`${person} **has been unmuted!**`)
     }, ms(time));
 }
