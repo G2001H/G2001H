@@ -19,18 +19,15 @@ module.exports.run = async (bot, message, args) => {
         ;Kill
         ;ServerInfo
         ;WhoIs
-        ;InfoBot
         ;Ping
         ;8ball
         ;Truth
         ;Dare
         ;Say
-        ;Verify
     `,true)
     .addField('👑 **__Administrator Commands:__**',`
         ;Purge
         ;Kick
-        ;Vote
         ;IsTrusted
         ;Mute
         ;UnMute
@@ -39,7 +36,6 @@ module.exports.run = async (bot, message, args) => {
         ;Poll
         ;ServerSetName
         ;ChannelSay
-        ;Setup
     `,true)
     .setFooter('Bot by: G2001H#7660')
     message.channel.send(embed1);
