@@ -3,27 +3,27 @@ const client = new Discord.Client();
 const pref = require("./package.json")
 
 client.on('ready', () =>{
-    console.log('Bot is ON');
-    let games = ["G2001H","Say ;Help"];
+    console.log("[" + pref.prefix + "] G2001H\'s Bot is online!"); 
+    let games = ["G2001H"];
     let types = ["WATCHING", "STREAMING", "PLAYING", "LISTENING"]
     setInterval(() => {
         client.user.setActivity(games[Math.floor(Math.random()* games.length)],
         {url: "https://twitch.tv/G2001H_Developer", type: (types[Math.floor(Math.random()* types.length)])})
     }, 10000)
-    let statuss = ["dnd", "idle", "online"] //"invisible"
+    let statuss = ["dnd", "idle", "online"]
     setInterval(() => {
-    client.user.setStatus(statuss[Math.floor(Math.random()* statuss.length)]) // dnd, idle, online, invisible
+    client.user.setStatus(statuss[Math.floor(Math.random()* statuss.length)])
     }, 10000)
     client.user.setUsername("[" + pref.prefix + "] G2001H's Bot")
 });
 
 client.on("message", message => {
-	if (message.author.bot) return; // check if is bot talking
+	if (message.author.bot) return;
 	if (message.author.bot || !message.guild) return;
 	if (!message.content.startsWith(pref.prefix)) return;
 	let command = message.content.split(" ")[0]; 
 	command = command.slice(pref.prefix.length);
-	let args = message.content.split(" ").slice(1);
+    let args = message.content.split(" ").slice(1);
 	try {
 		let commandFile = require(`./commands/${command.toLowerCase()}.js`);
 		commandFile.run(client, message, args);
