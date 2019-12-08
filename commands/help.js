@@ -28,7 +28,7 @@ module.exports.run = async (bot, message, args) => {
     .addField('👑 **__Administrator Commands:__**',`
         ;Purge
         ;Kick
-        ;IsTrusted
+        ;Vote
         ;Mute
         ;UnMute
         ;TempMute
