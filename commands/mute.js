@@ -1,5 +1,4 @@
 const Discord = require("discord.js")
-const ms = require('ms');
 const config = require('../package.json');
 
 module.exports.run = async (bot, message, args) => {
