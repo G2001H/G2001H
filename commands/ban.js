@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
         .addField('👇 **__Banned by:__**', `${message.author}`,true)
         .addField('❓ **__Banned Reason:__**', reason,true)
         .setFooter('Bot by: G2001H#7660')
-        message.channel.send(`${target} has been banned!`);
+        message.channel.send(`${target} **has been banned!**`);
     target.ban(reason);
     logs.send(embed);
 };
