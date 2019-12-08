@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     let person  = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]))
     let mainrole = message.guild.roles.find(role => role.name === "Verified");
     let muterole = message.guild.roles.find(role => role.name === "Muted");
-    let reason = args.slice(2).join(' ');
+    let reason = args.slice(1).join(' ');
     let logs = message.guild.channels.find(ch => ch.name === config.logsChannel);
     if(!person) return message.reply("`;Mute <@Member> <Reason>`");
     if(!reason) return message.reply("`;Mute <@Member> <Reason>`");
