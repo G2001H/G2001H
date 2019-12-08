@@ -24,6 +24,7 @@ module.exports.run = async (bot, message, args) => {
         ;Truth
         ;Dare
         ;Say
+        ;CreateHire
     `,true)
     .addField('👑 **__Administrator Commands:__**',`
         ;Purge
