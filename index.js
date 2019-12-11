@@ -6,7 +6,7 @@ client.on('ready', () =>{
     let myGuild = client.guilds.get('616778093905969155');
     let memberscont = myGuild.memberCount;
     let membercountchannel = myGuild.channels.get('645738814605623306');
-    membercountchannel.setName("Members: " + memberscont).catch(error => console.log(error));
+    membercountchannel.setName("All Members: " + memberscont).catch(error => console.log(error));
     console.log("[" + pref.prefix + "] G2001H\'s Bot is online!"); 
     let games = ["G2001H", "In " + client.guilds.size + " Servers"];
     let types = ["WATCHING", "STREAMING", "PLAYING", "LISTENING"]
