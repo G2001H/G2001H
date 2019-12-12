@@ -28,6 +28,7 @@ module.exports.run = async (bot, message, args) => {
         ;Love
         ;RPS
         ;Status
+        ;Bot
     `,true)
     .addField('👑 **__Administrator Cmds:__**',`
         ;Purge
@@ -46,7 +47,6 @@ module.exports.run = async (bot, message, args) => {
     .addField('⛔ **__Locked Cmds:__**',`
         ;CreateHire
         ;IsTrusted
-        ;Bot
     `,true)
     .setFooter('Bot by: G2001H#7660')
     message.channel.send(embed1);
