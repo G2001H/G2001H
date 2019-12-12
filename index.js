@@ -29,7 +29,7 @@ client.on("guildMemberAdd", member => {
     membercountchannel.setName("All Members: " + memberscont).catch(error => console.log(error));
     const channel = myGuild.channels.find(ch => ch.name === '👋welcome👋' || ch.name === 'welcome');
     if (!channel) return;
-    channel.send(`*Hey* ${member}, *welcome to* **${myGuild.name}** *Please read rules* #📝rules📝 🎉🤗!`);
+    channel.send(`Hey ${member}, welcome to **${myGuild.name}** 🎉🤗!`);
     }
 })
 client.on("guildMemberRemove", member => {
@@ -40,7 +40,7 @@ client.on("guildMemberRemove", member => {
     membercountchannel.setName("All Members: " + memberscont).catch(error => console.log(error)); 
     const channel = myGuild.channels.find(ch => ch.name === '👋goodbye👋' || ch.name === 'goodbye');
     if (!channel) return;
-    channel.send(`**${member.user.tag}** *just left the server*`);
+    channel.send(`**${member.user.tag}** just left the server!`);
     }
 })
 
