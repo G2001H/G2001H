@@ -3,6 +3,7 @@ const request = require('request-promise')
 
 module.exports.run = async (client, message, args) => {
     const memberName = args.join(" ")
+    if(!memberName) return message.reply("`;DevForum <User>`")
     const devForumData = await request({
         uri: `https://devforum.roblox.com/users/${memberName}.json`,
         json: true,
