@@ -5,7 +5,7 @@ exports.run = (client, message, args) => {
     if(!usuario) return message.reply('`;Triggered <@Member>`');
     let url = `https://eclyssia-api.tk/api/v1/triggered?url=${usuario.avatarURL}`
     snek.get(url).then(async res => {
-        await message.channel.send(message.author,{
+        await message.channel.send({
            files: [{
                attachment: res.body,
                name: `${usuario.tag}-triggered.gif`
