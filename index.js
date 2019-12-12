@@ -29,7 +29,7 @@ client.on("guildMemberAdd", member => {
     membercountchannel.setName("All Members: " + memberscont).catch(error => console.log(error));
     const channel = myGuild.channels.find(ch => ch.name === '👋welcome👋' || ch.name === 'welcome');
     if (!channel) return;
-    channel.send(`Hey ${member}, welcome to **${myGuild.name}** Please read rules 🎉🤗!`);
+    channel.send(`*Hey* ${member}, *welcome to* **${myGuild.name}** *Please read rules* #📝rules📝 🎉🤗!`);
     }
 })
 client.on("guildMemberRemove", member => {
