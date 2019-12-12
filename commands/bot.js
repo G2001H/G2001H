@@ -1,7 +1,6 @@
 const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => {
-    if(message.guild.id === "638377655439196198"){ //Allowed only in this server!
     const embeds = new Discord.RichEmbed()
     .setTitle("📜 **G2001H's Bot Information!** 📜")
     .setColor("RANDOM")
@@ -17,9 +16,6 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail(message.guild.iconURL)
     .setFooter('Bot by: G2001H#7660')
     message.channel.send(embeds)
-}else{
-    message.reply("**Its not allowed to use this command in this server!**");
-}
 }
 
 
