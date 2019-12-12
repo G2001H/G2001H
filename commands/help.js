@@ -27,6 +27,7 @@ module.exports.run = async (bot, message, args) => {
         ;Instagram
         ;Love
         ;RPS
+        ;Status
     `,true)
     .addField('👑 **__Administrator Cmds:__**',`
         ;Purge
