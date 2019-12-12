@@ -8,8 +8,6 @@ module.exports.run = async (client, message, args) => {
         .setColor("RANDOM")
         .setImage(img)
         .setTitle("**Image " + args[0] + "**")
-        .setURL(`https://reddit.com/r/${args[0]}`)
         .setFooter('Bot by: G2001H#7660');
     message.channel.send(embed);
 }
-
