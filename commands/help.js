@@ -29,6 +29,7 @@ module.exports.run = async (bot, message, args) => {
         ;RPS
         ;Status
         ;Bot
+        ;DevForum
     `,true)
     .addField('👑 **__Administrator Cmds:__**',`
         ;Purge
