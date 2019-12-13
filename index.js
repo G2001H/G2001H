@@ -4,14 +4,14 @@ const pref = require("./package.json")
 
 client.on('ready', () =>{
     console.log("[" + pref.prefix + "] G2001H\'s Bot is online!"); 
+    setInterval(() => {
     let games = ["G2001H", "In " + client.guilds.size + " Servers"];
     let types = ["WATCHING", "STREAMING", "PLAYING", "LISTENING"]
     let statuss = ["dnd", "idle", "online"]
-    setInterval(() => {
     client.user.setStatus(statuss[Math.floor(Math.random()* statuss.length)])
     client.user.setActivity((games[Math.floor(Math.random()* games.length)])),
     {url: "https://twitch.tv/G2001H_Developer", type: (types[Math.floor(Math.random()* types.length)])}
-    }, 10000)
+    }, 5000)
     client.user.setUsername("[" + pref.prefix + "] G2001H's Bot")
     let myGuild = client.guilds.get('616778093905969155');
     if(!myGuild) return console.log("Err");{
