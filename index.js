@@ -56,7 +56,7 @@ client.on("message", message => {
 		let commandFile = require(`./commands/${command.toLowerCase()}.js`);
 		commandFile.run(client, message, args);
 	} catch (err) {
-		message.reply("Unknown command, say ``?help`` to see all commands.");
+		message.reply("Unknown command, say ``;help`` to see all commands.");
 	}
 });
 
