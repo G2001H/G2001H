@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const ms = require('ms');
 const config = require('../package.json');
+const { getMember, formatDate } = require("../functions.js");
 
 module.exports.run = async (bot, message, args) => {
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('**You dont have permission to use this command!**');
@@ -22,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("🔇 **[TempMute] " + person.user.username + "** 🔇")
         .addField('🔇 **__Temporarily Muted Member:__**', `${person}`,true)
         .addField('🔇 **__Temporarily Muted MemberID:__**', person.user.id ,true)
-        .addField('📅 **__Temporarily Muted Date:__**', message.createdAt)
+        .addField('📅 **__Temporarily Muted Date:__**', formatDate(message.createdAt))
         .addField('👇 **__Temporarily Muted by:__**', `${message.author}`,true)
         .addField('🕐 **__Temporarily Muted Time:__**', `${ms(ms(time))}`, true)
         .addField('❓ **__Temporarily Muted Reason:__**', reason,true)
