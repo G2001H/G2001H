@@ -5,12 +5,12 @@ const pref = require("./package.json")
 client.on('ready', () =>{
     console.log("[" + pref.prefix + "] G2001H\'s Bot is online!"); 
     setInterval(() => {
-    let games = ["G2001H", "In " + client.guilds.size + " Servers"];
+    let games = ["G2001H", "In " + client.guilds.size + " Servers", client.users.size];
     let types = ["WATCHING", "STREAMING", "PLAYING", "LISTENING"]
     let statuss = ["dnd", "idle", "online"]
     client.user.setStatus(statuss[Math.floor(Math.random()* statuss.length)])
     client.user.setActivity((games[Math.floor(Math.random()* games.length)])),
-    {url: "https://twitch.tv/G2001H_Developer", type: (types[Math.floor(Math.random()* types.length)])}
+    {type: "WATCHING"}
     }, 5000)
     client.user.setUsername("[" + pref.prefix + "] G2001H's Bot")
     let myGuild = client.guilds.get('616778093905969155');
@@ -55,7 +55,7 @@ client.on("message", message => {
 		let commandFile = require(`./commands/${command.toLowerCase()}.js`);
 		commandFile.run(client, message, args);
 	} catch (err) {
-		console.error(err);
+		message.reply("Unknown command, say ``?help`` to see all commands.");
 	}
 });
 
