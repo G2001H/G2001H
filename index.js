@@ -22,6 +22,35 @@ client.on('ready', () =>{
     }
 });
 
+client.on("guildCreate", guild => {
+	let myGuild = client.guilds.get('616778093905969155');
+	if(!myGuild) return console.log("Err");{
+    	let channelSend = myGuild.channels.get(c => c.name === "bot-guilds");
+	if(!channelSend) return console.log("Err")
+	const embed = new Discord.RichEmbed()
+	.setTitle("**Join Server**")
+	.setColor("RANDOM")
+	.addField("**__Guild Name:__**", guild.name)
+	.addField("**__Guild ID:__**", guild.id)
+	.addField("**__Total Members:__**", guild.memberCount)
+	channelSend.send(embed)
+	}
+  });
+  
+  client.on("guildDelete", guild => {
+	let myGuild = client.guilds.get('616778093905969155');
+	if(!myGuild) return console.log("Err");{
+    	let channelSend = myGuild.channels.get(c => c.name === "bot-guilds");
+	if(!channelSend) return console.log("Err")
+	const embed = new Discord.RichEmbed()
+	.setTitle("**Left Server**")
+	.setColor("RANDOM")
+	.addField("**__Guild Name:__**", guild.name)
+	.addField("**__Guild ID:__**", guild.id)
+	channelSend.send(embed)
+	}
+  });
+
 client.on("guildMemberAdd", member => {
     let myGuild = client.guilds.get('616778093905969155');
     if(!myGuild) return console.log("Err");{
