@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const pref = require("./package.json")
+const { getMember, formatDate } = require("../functions.js");
 
 client.on('ready', () =>{
     console.log("Bot is online!"); 
@@ -28,11 +29,18 @@ client.on("guildCreate", guild => {
     	let channelSend = myGuild.channels.find(ch => ch.name === "bot-guilds");
 	if(!channelSend) return console.log("Err")
 	const embed = new Discord.RichEmbed()
-	.setTitle("**Join Server**")
+	.setTitle("📜 **Join Server** 📜")
 	.setColor("RANDOM")
-	.addField("**__Guild Name:__**", guild.name)
-	.addField("**__Guild ID:__**", guild.id)
-	.addField("**__Total Members:__**", guild.memberCount)
+	.addField("👑 **__Guild Owner:__**", guild.owner,true)
+	.addField("👑 **__Guild Owner ID:__**", guild.ownerId,true)
+	.addField("🌟 **__Guild Name:__**", guild.name,true)
+	.addField("🌟 **__Guild ID:__**", guild.id,true)
+	.addField("🙋‍♂️ **__Members Count:__**", guild.memberCount,true)
+	.addField("🔘 **__Members Online:__**", guild.members.filter(m => m.presence.status !== "offline").size.toString(),true)
+	.addField("🤍 **__Roles:__**", guild.roles.filter(r => r.id !== guild.id).map(r => r).join(" ") || 'None',true)
+	.addField("📅 **__Guild Created:__**", formatDate(guild.createdAt),true)
+	.setThumbnail(guild.iconURL)
+    	.setFooter('Bot by: G2001H#7660')
 	channelSend.send(embed)
 	}
   });
