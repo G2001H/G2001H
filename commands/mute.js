@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const ms = require('ms');
 const config = require('../package.json');
+const { getMember, formatDate } = require("../functions.js");
 
 module.exports.run = async (bot, message, args) => {
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.reply('**You dont have permission to use this command!**');
@@ -20,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("🔇 **[Mute] " + person.user.username + "** 🔇")
         .addField('🔇 **__Muted Member:__**', `${person}`,true)
         .addField('🔇 **__Muted MemberID:__**', person.user.id ,true)
-        .addField('📅 **__Muted Date:__**', message.createdAt)
+        .addField('📅 **__Muted Date:__**', formatDate(message.createdAt))
         .addField('👇 **__Muted by:__**', `${message.author}`,true)
         .addField('❓ **__Muted Reason:__**', reason,true)
         .setFooter('Bot by: G2001H#7660')
