@@ -37,7 +37,7 @@ client.on("guildCreate", guild => {
 	.addField("🌟 **__Guild ID:__**", guild.id,true)
 	.addField("🙋‍♂️ **__Members Count:__**", guild.memberCount,true)
 	.addField("🔘 **__Members Online:__**", guild.members.filter(m => m.presence.status !== "offline").size.toString(),true)
-	.addField("🤍 **__Roles:__**", guild.roles.filter(r => r.id !== guild.id).map(r => r).join(" ") || 'None',true)
+	.addField("🤍 **__Roles:__**", guild.roles.filter(r => r.id !== guild.id).map(r => r.name).join(" ") || 'None',true)
 	.addField("📅 **__Guild Created:__**", formatDate(guild.createdAt),true)
 	.setThumbnail(guild.iconURL)
     .setFooter('Bot by: G2001H#7660')
