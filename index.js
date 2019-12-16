@@ -60,6 +60,7 @@ client.on("guildCreate", guild => {
   });
 
 client.on("guildMemberAdd", member => {
+    if (member.guild.id !== "616778093905969155") return;
     let myGuild = client.guilds.get('616778093905969155');
     if(!myGuild) return console.log("Err");{
     let memberscont = myGuild.memberCount;
@@ -71,6 +72,7 @@ client.on("guildMemberAdd", member => {
     }
 })
 client.on("guildMemberRemove", member => {
+    if (member.guild.id !== "616778093905969155") return;
     let myGuild = client.guilds.get('616778093905969155');
     if(!myGuild) return console.log("Err");{
     let memberscont = myGuild.memberCount;
