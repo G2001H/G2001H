@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const config = require('../package.json');
+const { getMember, formatDate } = require("../functions.js");
 
 module.exports.run = async (bot, message, args) => {
     if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('**You dont have permission to use this command!**');
@@ -15,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
         .setTitle("👤 **" + target.user.username + " has been Kicked:** 👤")
         .addField('👤 **__Kicked Member:__**', `${target}`,true)
         .addField('👤 **__Kicked MemberID:__**', target.user.id,true)
-        .addField('📅 **__Kicked Date:__**', message.createdAt)
+        .addField('📅 **__Kicked Date:__**', formatDate(message.createdAt))
         .addField('👇 **__Kicked by:__**', `${message.author}`,true)
         .addField('❓ **__Kicked Reason:__**', reason,true)
         .setFooter('Bot by: G2001H#7660')
