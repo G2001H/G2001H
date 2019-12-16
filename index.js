@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const pref = require("./package.json")
-const { getMember, formatDate } = require("../functions.js");
+const { getMember, formatDate } = require("./functions.js");
 
 client.on('ready', () =>{
     console.log("Bot is online!"); 
@@ -40,7 +40,7 @@ client.on("guildCreate", guild => {
 	.addField("🤍 **__Roles:__**", guild.roles.filter(r => r.id !== guild.id).map(r => r).join(" ") || 'None',true)
 	.addField("📅 **__Guild Created:__**", formatDate(guild.createdAt),true)
 	.setThumbnail(guild.iconURL)
-    	.setFooter('Bot by: G2001H#7660')
+    .setFooter('Bot by: G2001H#7660')
 	channelSend.send(embed)
 	}
   });
