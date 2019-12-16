@@ -25,7 +25,7 @@ client.on('ready', () =>{
 client.on("guildCreate", guild => {
 	let myGuild = client.guilds.get('616778093905969155');
 	if(!myGuild) return console.log("Err");{
-    	let channelSend = myGuild.channels.get(c => c.name === "bot-guilds");
+    	let channelSend = myGuild.channels.get(ch => ch.name === "botguilds");
 	if(!channelSend) return console.log("Err")
 	const embed = new Discord.RichEmbed()
 	.setTitle("**Join Server**")
@@ -40,7 +40,7 @@ client.on("guildCreate", guild => {
   client.on("guildDelete", guild => {
 	let myGuild = client.guilds.get('616778093905969155');
 	if(!myGuild) return console.log("Err");{
-    	let channelSend = myGuild.channels.get(c => c.name === "bot-guilds");
+    	let channelSend = myGuild.channels.get(ch => ch.name === "botguilds");
 	if(!channelSend) return console.log("Err")
 	const embed = new Discord.RichEmbed()
 	.setTitle("**Left Server**")
