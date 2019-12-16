@@ -40,7 +40,7 @@ client.on("guildCreate", guild => {
 	.addField("🤍 **__Roles:__**", guild.roles.filter(r => r.id !== guild.id).map(r => r.name).join(" ") || 'None',true)
 	.addField("📅 **__Guild Created:__**", formatDate(guild.createdAt),true)
 	.setThumbnail(guild.iconURL)
-    .setFooter('Bot by: G2001H#7660')
+    	.setFooter('Bot by: G2001H#7660')
 	channelSend.send(embed)
 	}
   });
@@ -51,10 +51,11 @@ client.on("guildCreate", guild => {
     	let channelSend = myGuild.channels.find(ch => ch.name === "bot-guilds");
 	if(!channelSend) return console.log("Err")
 	const embed = new Discord.RichEmbed()
-	.setTitle("**Left Server**")
+	.setTitle("📜 **Left Server** 📜")
 	.setColor("RANDOM")
-	.addField("**__Guild Name:__**", guild.name)
-	.addField("**__Guild ID:__**", guild.id)
+	.addField("🌟 **__Guild Name:__**", guild.name)
+	.addField("🌟 **__Guild ID:__**", guild.id)
+    	.setFooter('Bot by: G2001H#7660')
 	channelSend.send(embed)
 	}
   });
