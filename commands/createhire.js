@@ -13,20 +13,20 @@ exports.run = (client, message, args) => {
   }
   let embed = new Discord.RichEmbed()
  
-  const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 15000 });
-  message.reply("**__Question 1:__** *What is your Discord Username?* `Example: Mention yourself` **(You have 15 seconds to answer!)**")
+  const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
+  message.reply("**__Question 1:__** *What is your Discord Username?* `Example: Mention yourself` **(You have 1 minute to answer!)**")
   collector1.on('collect', m => {
-    const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 25000 });  
+    const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
     embed.addField(`👤 **__Username:__**` ,`**${m}**`)
-    message.reply("**__Question 2:__** *What are you looking for?* `Example: Scripter/Builder/GFX/GUI Designer` **(You have 25 seconds to answer!)**")
+    message.reply("**__Question 2:__** *What are you looking for?* `Example: Scripter/Builder/GFX/GUI Designer` **(You have 1 minute to answer!)**")
     collector2.on('collect', mm => {
-      const collector3 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 25000 });  
+      const collector3 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
       embed.addField(`🌐 **__Looking For:__**` ,`**${mm}**`)
-      message.reply("**__Question 3:__** *How much you will pay?* `Example: 100 Robux/Paypal/Giftcard or None` **(You have 25 seconds to answer!)**")
+      message.reply("**__Question 3:__** *How much you will pay?* `Example: 100 Robux/Paypal/Giftcard or None` **(You have 1 minute to answer!)**")
       collector3.on('collect', mmm => {
-        const collector4 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 25000 });  
+        const collector4 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
         embed.addField(`💰 **__Payment:__**` ,`**${mmm}**`)
-        message.reply("**__Question 4:__** *What type of game you want to make?* `Example: Simulator/Tycoon/Fighting/Obby` **(You have 25 seconds to answer!)**")
+        message.reply("**__Question 4:__** *What type of game you want to make?* `Example: Simulator/Tycoon/Fighting/Obby` **(You have 1 minute to answer!)**")
         collector4.on('collect', mmmm => {
           const collector5 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
           embed.addField(`🎮 **__Type of Game:__**` ,`**${mmmm}**`)
