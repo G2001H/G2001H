@@ -63,7 +63,7 @@ if(message.channel.name == "🕹hiring-commands🕹"){
               embed.addField("📜 **__Description:__**", mmmm)
               embed.setColor("RANDOM")
               embed.setThumbnail(message.author.avatarURL||message.author.displayAvatarURL)
-              embed.setTitle("📜 **__Hiring for Builder__** 📜")
+              embed.setTitle("⚒ **__Hiring for Builder__** ⚒")
               embed.setFooter(`
 
 React with ✅ to accept
@@ -373,7 +373,7 @@ React with ❎ to decline
                       embed.addField("📜 **__Description:__**", mmmm)
                       embed.setColor("RANDOM")
                       embed.setThumbnail(message.author.avatarURL||message.author.displayAvatarURL)
-                      embed.setTitle("📋 **__Hiring for Animator__** 📋")
+                      embed.setTitle("🎞 **__Hiring for Animator__** 🎞")
                       embed.setFooter(`
         
 React with ✅ to accept
