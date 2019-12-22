@@ -19,7 +19,7 @@ exports.run = (bot, message, args) => {
       .setDescription("Do you wan't to say anything for Description?")
       .setFooter("You have 1 minute to answer!")
     ///////////////////////////////////////////////////////////
-    if(message.channel.name == "🕹️hiring-commands🕹️" || message.channel.name == "hiring-commands" ){
+    if(message.channel.name == "🕹hiring-commands🕹"){
       let embed = new Discord.RichEmbed()
       const collector0 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
       embed.addField(`**__Contact:__**`, message.author)
