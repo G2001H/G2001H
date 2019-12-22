@@ -373,13 +373,13 @@ React with ❎ to decline
                       embed.addField("📜 **__Description:__**", mmmm)
                       embed.setColor("RANDOM")
                       embed.setThumbnail(message.author.avatarURL||message.author.displayAvatarURL)
-                      embed.setTitle("🎞 **__Hiring for Animator__** 🎞")
+                      embed.setTitle("📋 **__Hiring for Animator__** 📋")
                       embed.setFooter(`
         
 React with ✅ to accept
 React with ❎ to decline
                       `)
-                      let ch = message.guild.channels.find(x => x.name === "🎞️animator-hiring🎞️")
+                      let ch = message.guild.channels.find(x => x.name === "📋animator-hiring📋")
                       if (ch) {
                         message.channel.bulkDelete(9)
                         message.channel.send({embed}).then(embedMessage => {
