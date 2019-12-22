@@ -23,7 +23,7 @@ exports.run = (bot, message, args) => {
   .setDescription("What type of clothings you want to make?")
   .setFooter("You have 1 minute to answer!")
 ///////////////////////////////////////////////////////////
-if(message.channel.name == "🕹️hiring-commands🕹️" || message.channel.name == "hiring-commands" ){
+if(message.channel.name == "🕹hiring-commands🕹" ){
   if(args[0] == null){
     const nullmessage = new Discord.RichEmbed()
     .setColor("RANDOM")
