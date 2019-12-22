@@ -41,57 +41,57 @@ if(message.channel.name == "🕹hiring-commands🕹"){
     message.channel.send(nullmessage)
   }else{
   if(args[0].toLowerCase() == "builder"){
-  let embed = new Discord.RichEmbed()
- 
-  const collector0 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
-  embed.addField(`📞 **__Contact:__**`, message.author)
-  const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
-  message.channel.send(HireBuilderQ1)
-  collector1.on('collect', m => {
-    const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
-    embed.addField(`👨 **__Roblox Username:__**`, m)
-    message.channel.send(HireBuilderQ2)
-    collector2.on('collect', mm => {
-      const collector3 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
-      embed.addField(`💸 **__Payment:__**`, mm)
-      message.channel.send(HireBuilderQ3)
-      collector3.on('collect', mmm => {
-        const collector4 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
-        embed.addField(`🕹️ **__Type of Game:__**`, mmm)
-        message.channel.send(HireBuilderQ4)
-        collector4.on('collect', mmmm => {
-            embed.addField("📜 **__Description:__**", mmmm)
-            embed.setColor("RANDOM")
-            embed.setThumbnail(message.author.avatarURL||message.author.displayAvatarURL)
-            embed.setTitle("⚒**__Hiring for Builder__** ⚒")
-            embed.setFooter(`
+    let embed = new Discord.RichEmbed()
+   
+    const collector0 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
+    embed.addField(`📞 **__Contact:__**`, message.author)
+    const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
+    message.channel.send(HireBuilderQ1)
+    collector1.on('collect', m => {
+      const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
+      embed.addField(`👨 **__Roblox Username:__**`, m)
+      message.channel.send(HireBuilderQ2)
+      collector2.on('collect', mm => {
+        const collector3 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
+        embed.addField(`💸 **__Payment:__**`, mm)
+        message.channel.send(HireBuilderQ3)
+        collector3.on('collect', mmm => {
+          const collector4 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
+          embed.addField(`🕹️ **__Type of Game:__**`, mmm)
+          message.channel.send(HireBuilderQ4)
+          collector4.on('collect', mmmm => {
+              embed.addField("📜 **__Description:__**", mmmm)
+              embed.setColor("RANDOM")
+              embed.setThumbnail(message.author.avatarURL||message.author.displayAvatarURL)
+              embed.setTitle("📜 **__Hiring for Builder__** 📜")
+              embed.setFooter(`
 
 React with ✅ to accept
 React with ❎ to decline
-            `)
-            let ch = message.guild.channels.find(x => x.name === "⚒️builder-hiring⚒️" )
-            if (ch) {
-              message.channel.bulkDelete(9)
-              message.channel.send({embed}).then(embedMessage => {
-                embedMessage.react("✅");
-                embedMessage.react("❎")
-                const filter = (r, u) => r.me && !u.bot && message.author,collector = embedMessage.createReactionCollector(filter, { max: 1});
-                collector.on('collect', (r) => {
-                    switch (r.emoji.name) {
-                        case '✅': {
-                            embed.setFooter(`Bot by: G2001H#2001`);
-                            embedMessage.edit(embed)
-                            embedMessage.delete(0);
-                            ch.send(embed)
-                            break;
-                        }
-                        case '❎': {
-                            embedMessage.delete(0);
-                            break;
+              `)
+              let ch = message.guild.channels.find(x => x.name === "⚒builder-hiring⚒")
+              if (ch) {
+                message.channel.bulkDelete(9)
+                message.channel.send({embed}).then(embedMessage => {
+                  embedMessage.react("✅");
+                  embedMessage.react("❎")
+                  const filter = (r, u) => r.me && !u.bot && message.author,collector = embedMessage.createReactionCollector(filter, { max: 1});
+                  collector.on('collect', (r) => {
+                      switch (r.emoji.name) {
+                          case '✅': {
+                              embed.setFooter(`Bot by: G2001H#2001`);
+                              embedMessage.edit(embed)
+                              embedMessage.delete(0);
+                              ch.send(embed)
+                              break;
                           }
-                        }
+                          case '❎': {
+                              embedMessage.delete(0);
+                              break;
+                            }
+                          }
+                        })
                       })
-                    })
           }
         });
         collector4.on('end', (collected, reason) => {if (reason === "time"){message.reply("Times Up!")}});
