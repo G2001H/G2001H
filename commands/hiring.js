@@ -69,7 +69,7 @@ if(message.channel.name == "🕹hiring-commands🕹"){
 React with ✅ to accept
 React with ❎ to decline
             `)
-            let ch = message.guild.channels.find(x => x.name === "builder-hiring" || x.name === "⚒️builder-hiring⚒️" )
+            let ch = message.guild.channels.find(x => x.name === "⚒️builder-hiring⚒️" )
             if (ch) {
               message.channel.bulkDelete(9)
               message.channel.send({embed}).then(embedMessage => {
