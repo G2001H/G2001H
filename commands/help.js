@@ -47,6 +47,7 @@ module.exports.run = async (bot, message, args) => {
         ;Setup
         ;Giveaway
         ;IsTrusted
+        ;Java
     `,true)
     .setFooter('Bot by: G2001H#2001')
     message.channel.send(embed1);
