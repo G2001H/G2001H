@@ -32,6 +32,7 @@ module.exports.run = async (bot, message, args) => {
         ;DevForum
         ;Hiring
         ;ToHire
+        ;MemberRole
     `,true)
     .addField('👑 **__Administrator Cmds:__**',`
         ;Purge
