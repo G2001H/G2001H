@@ -2,13 +2,20 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const pref = require("./package.json")
 const { getMember, formatDate } = require("./functions.js");
+function duration(ms){
+const sec = Math.floor((ms / 1000) % 60).toString()
+const min = Math.floor((ms / (1000 * 60)) % 60).toString()
+const hrs = Math.floor((ms / (1000 * 60 * 60)) % 60).toString()
+const days = Math.floor((ms / (1000 * 60 * 60 * 60)) % 60).toString()
+return `${days.padStart(1, '0')}:${hrs.padStart(1, '0')}:${min.padStart(1, '0')}:${sec.padStart(1, '0')}`
+}
 
 client.on('ready', () =>{
     console.log("Bot is online!"); 
     let statuss = ["dnd", "idle", "online"]
     let types = ["WATCHING", "STREAMING", "PLAYING", "LISTENING"]
     setInterval(() => {
-    let games = ["G2001H", "In " + client.guilds.size + " Servers", client.users.size + " Users"];
+    let games = ["G2001H", "In " + client.guilds.size + " Servers", client.users.size + " Users", `for ${duration(client.uptime)}`];
     client.user.setActivity(games[Math.floor(Math.random()* games.length)],
     {url: "https://twitch.tv/G2001H_Developer", type: (types[Math.floor(Math.random()* types.length)])})
 	}, 5000)
