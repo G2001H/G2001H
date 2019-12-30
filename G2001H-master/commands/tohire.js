@@ -19,33 +19,33 @@ exports.run = (bot, message, args) => {
       .setDescription("Do you wan't to say anything for Description?")
       .setFooter("You have 1 minute to answer!")
     ///////////////////////////////////////////////////////////
-    if(message.channel.name == "🕹hiring-commands🕹"){
+    if(message.channel.name == "🕹️hiring-commands🕹️" || message.channel.name == "hiring-commands" || message.channel.name == "💬staff-general💬" ){
       let embed = new Discord.RichEmbed()
       const collector0 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
-      embed.addField(`**__Contact:__**`, message.author)
+      embed.addField(`📞 **__Contact:__**`, message.author)
       const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
       message.channel.send(HireBuilderQ1)
       collector1.on('collect', m => {
         const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
-        embed.addField(`**__Roblox Username:__**`, m)
+        embed.addField(`👨 **__Roblox Username:__**`, m)
         message.channel.send(HireBuilderQ2)
         collector2.on('collect', mm => {
           const collector3 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
-          embed.addField(`**__Payment:__**`, mm)
+          embed.addField(`💸 **__Payment:__**`, mm)
           message.channel.send(HireBuilderQ3)
           collector3.on('collect', mmm => {
             const collector4 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
-            embed.addField(`**__Skills:__**`, mmm)
+            embed.addField(`❓ **__Skills:__**`, mmm)
             message.channel.send(HireBuilderQ4)
             collector4.on('collect', mmmm => {
-                embed.addField("**__Description:__**", mmmm)
+                embed.addField("📜 **__Description:__**", mmmm)
                 embed.setColor("RANDOM")
                 embed.setThumbnail(message.author.avatarURL||message.author.displayAvatarURL)
                 embed.setTitle("**To Hire**")
                 embed.setFooter(`
     
-React with ✅ to accept
-React with ❎ to decline
+React with ✅ to post this hiring
+React with ❎ to delete this hiring
                 `)
                 let ch = message.guild.channels.find(x => x.name === "💸to-hire💸")
                 if (ch) {
@@ -60,6 +60,7 @@ React with ❎ to decline
                                 embed.setFooter(`Bot by: G2001H#2001`);
                                 embedMessage.edit(embed)
                                 embedMessage.delete(0);
+                                ch.send(`<@&661119497821749289>, **Boring from Pinging? go to <#661109548299321344> and remove the react for this ping.**`)
                                 ch.send(embed)
                                 break;
                             }
