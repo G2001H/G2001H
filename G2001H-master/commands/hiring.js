@@ -384,7 +384,7 @@ React with ❎ to delete this hiring
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                       `)
-                      let ch = message.guild.channels.find(x => x.id === 658364363719311386)
+                      let ch = message.guild.channels.find(x => x.id === "658364363719311386")
                       if (ch) {
                         message.channel.bulkDelete(9)
                         message.channel.send({embed}).then(embedMessage => {
