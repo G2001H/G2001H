@@ -27,6 +27,7 @@ client.on('ready', () =>{
     let memberscont = myGuild.memberCount;
     let membercountchannel = myGuild.channels.get('645738814605623306');
     membercountchannel.setName("Members: " + memberscont).catch(error => console.log(error));
+    client.user.setAvatar("https://tr.rbxcdn.com/e16ed63ce4be52489f515504993c3101/150/150/AvatarHeadshot/Png")
 });
 
 client.on("guildCreate", guild => {
