@@ -37,7 +37,7 @@ message.channel.send(new Discord.RichEmbed()
     message.member.setNickname(`${username}`)
     message.member.addRole(message.guild.roles.find(role => role.id === "616778467488301182"));
 } else {
-message.channel.send("*Cannot find the code in Description*, *say* ``;VerifyHelp`` *for help*")
+message.reply("*Cannot find the code in Description*, *say* ``;VerifyHelp`` *for help*")
     }
   })
 }).catch(collected => {
