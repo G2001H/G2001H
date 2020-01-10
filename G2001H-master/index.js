@@ -7,7 +7,7 @@ const swearWords = [
 "fakyou","faggot","fag00t","vagina","dick","dicks","pussy","anus","sex","sexy","sexi",
 "seksi","porn","pornography","porno","porns","nudo","nudos","lipshit","boffing","cock",
 "c0ck","dildo","brazzers",,"xnxx","bastard","dickhead","snatch","twat","knob","minge",
-"prick","gash","flaps","punani","clunge","beaver","bloodclaat","bellend","fanny","clunge",];
+"prick","gash","flaps","punani","clunge","beaver","bloodclaat","bellend","fanny","clunge","boobs",];
 const discordlink = ["https://discord.gg/"];
 
 function duration(ms){
