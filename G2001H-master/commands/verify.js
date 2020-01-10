@@ -1,5 +1,18 @@
 const Discord = require("discord.js");
 const noblox = require('noblox.js');
+const randoms = [
+"Blue, Yellow, Blue, Red, Pink",
+"Green, Yellow, Pink, Red, Pink",
+"Green, Red, Blue, Red, Pink",
+"Green, Blue, Blue, Pink, Pink",
+"Green, Really Red, Red, Pink",
+"Yellow, Pink, Blue, Red, Pink",
+"Green, Green, Blue, Red, Pink",
+"Green, Yellow, Blue, Red, Green",
+"Yellow, Pink, Green, Red, Pink",
+"Pink, Green, Yellow, Blue, Pink",
+"Green, Yellow, Blue, Red, Pink",
+]
 
 module.exports.run = async(client, message, args) => {
 var args = message.content.split(/[ ]+/)
@@ -8,7 +21,7 @@ const collector = message.channel.createMessageCollector(filter, { time: 15000 }
 var username = args[1];
 if (username){
 noblox.getIdFromUsername(username).then(id => {
-var tokenID = message.author.id
+var tokenID = (randoms[Math.floor(Math.random() * randoms.length)])
 message.channel.send(new Discord.RichEmbed()
     .setTitle(`Put the code in your roblox description`)
     .setDescription(`Say 'done' if you put the code in description`)
@@ -16,10 +29,10 @@ message.channel.send(new Discord.RichEmbed()
     .setFooter("Bot by: G2001H#2001")
     .setColor("RANDOM"))
 .then(() => {
-    message.channel.awaitMessages(filter, { maxMatches: 1, time: 600000, errors: ['time']})
+    message.channel.awaitMessages(filter, { maxMatches: 1, time: 300000, errors: ['time']})
     .then(collected => {
     noblox.getBlurb(`${id}`).tap(function(user){
-    if (user.match(message.author.id)){
+    if (user.match(tokenID)){
     message.reply(`✅ Verified, ${username}`)
     message.member.setNickname(`${username}`)
     message.member.addRole(message.guild.roles.find(role => role.id === "616778467488301182"));
