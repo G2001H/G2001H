@@ -24,6 +24,7 @@ module.exports.run = async (bot, message, args) => {
         ;Dare
         ;Say
         ;Verify
+        ;VerifyHelp
         ;Instagram
         ;Love
         ;RPS
