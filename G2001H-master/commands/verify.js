@@ -14,7 +14,6 @@ const randoms = [
 "Green, Yellow, Blue, Red, Pink",
 "Green, Blue, Blue, Red, Pink",
 "Red, Blue, Blue, Red, Pink",
-"Red, Green, Blue, Red, Blue",
 "Red, Blue, Pink, Red, Blue",
 "Blue, Yellow, Pink, Red, Blue",
 "Blue, Pink, Yellow, Red, Blue",
