@@ -96,6 +96,7 @@ client.on("guildMemberRemove", member => {
 })
 
 client.on("message", message => {
+let sendwarns = myGuild.channels.find(ch => ch.id === "623210109396451378");
 if(swearWords.some(word => message.content.toLowerCase().includes(word))) {
 if(message.guild.ownerID === message.author.id){
 	return;
@@ -106,7 +107,7 @@ if(message.guild.ownerID === message.author.id){
 	.addField("**__Member:__**", message.author.tag)
 	.addField("**__Bad Word:__**", message.content)
 	.setFooter("Bot by: G2001H#2001")
-	message.channel.send(embeds).catch(error => console.log(error))
+	sendwarns.send(embeds).catch(error => console.log(error))
 	message.reply("*Don't say bad words!*").then(sentMessage =>{
 	sentMessage.delete(10000).catch(error => console.log(error))
 	})
@@ -123,7 +124,7 @@ if(message.guild.ownerID === message.author.id){
 	.addField("**__Member:__**", message.author.tag)
 	.addField("**__Link:__**", message.content)
 	.setFooter("Bot by: G2001H#2001")
-	message.channel.send(embeds2).catch(error => console.log(error))
+	sendwarns.send(embeds2).catch(error => console.log(error))
 	message.reply("*It's not allowed to advertise discord server link!*").then(sentMessage =>{
 	sentMessage.delete(10000).catch(error => console.log(error))
 	})
