@@ -42,7 +42,7 @@ message.channel.send(new Discord.RichEmbed()
     noblox.getBlurb(`${id}`).tap(function(user){
     if (user.match(tokenID)){
     message.reply(`✅ Verified, ${username}`)
-    message.member.setNickname(`${username}`)
+    message.member.setNickname(`${username}`).catch(error => console.log(error))
     message.member.addRole(message.guild.roles.find(role => role.id === "616778467488301182"));
 } else {
 message.reply("*Cannot find the code in Description*, *say* ``;VerifyHelp`` *for help*")
