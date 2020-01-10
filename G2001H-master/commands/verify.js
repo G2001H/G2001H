@@ -22,7 +22,7 @@ message.channel.send(new Discord.RichEmbed()
     if (user.match(message.author.id)){
     message.reply(`✅ Verified, ${username}`)
     message.member.setNickname(`${username}`)
-    message.member.addRole(message.guild.roles.find(role => role.id === "665030441236955136"));
+    message.member.addRole(message.guild.roles.find(role => role.id === "616778467488301182"));
 } else {
 message.channel.send("*Cannot find the code in Description*, *say* ``;VerifyHelp`` *for help*")
     }
