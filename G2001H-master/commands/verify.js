@@ -12,6 +12,15 @@ const randoms = [
 "Yellow, Pink, Green, Red, Pink",
 "Pink, Green, Yellow, Blue, Pink",
 "Green, Yellow, Blue, Red, Pink",
+"Green, Blue, Blue, Red, Pink",
+"Red, Blue, Blue, Red, Pink",
+"Red, Green, Blue, Red, Blue",
+"Red, Blue, Pink, Red, Blue",
+"Blue, Yellow, Pink, Red, Blue",
+"Blue, Pink, Yellow, Red, Blue",
+"Blue, Pink, Green, Red, Yellow",
+"Blue, Pink, Yellow, Red, Yellow",
+"Blue, Red, Green, Yellow, Green",
 ]
 
 module.exports.run = async(client, message, args) => {
