@@ -24,7 +24,7 @@ const randoms = [
 
 module.exports.run = async(client, message, args) => {
 var args = message.content.split(/[ ]+/)
-const filter = m => m.content.includes('done');
+const filter = m => m.content.includes('done') || m.content.includes('Done') || m.content.includes('DONE') || m.content.includes('dONE');
 const collector = message.channel.createMessageCollector(filter, { time: 15000 });
 var username = args[1];
 if (username){
