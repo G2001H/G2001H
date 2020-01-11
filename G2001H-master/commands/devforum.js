@@ -36,5 +36,5 @@ module.exports.run = async (bot, message, args) => {
     .addField("📆 **__Created:__**", devForumData.user.created_at,true)
     .setFooter('Bot by: G2001H#2001')
     .setThumbnail(img)
-    message.channel.send(embeds);
+    message.channel.send(embeds).catch(error => message.reply("*Cannot find that member*"))
 }
