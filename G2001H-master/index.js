@@ -96,7 +96,7 @@ client.on("guildMemberRemove", member => {
 })
 
 client.on("message", message => {
-let sendwarns = myGuild.channels.find(ch => ch.id === "623210109396451378");
+let sendwarns = client.guild.channels.find(ch => ch.id === "623210109396451378");
 if(swearWords.some(word => message.content.toLowerCase().includes(word))) {
 if(message.guild.ownerID === message.author.id){
 	return;
