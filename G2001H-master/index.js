@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const pref = require("./package.json")
 const { getMember, formatDate } = require("./functions.js");
 const swearWords = [
-"slut","penis","ass","bitch","bitches","asshole","fuck","fak","fucker","fucking","fuckyou","motherfucker",
+"slut","penis","bitch","bitches","asshole","fuck","fak","fucker","fucking","fuckyou","motherfucker",
 "fakyou","faggot","fag00t","vagina","dick","dicks","pussy","anus","sex","sexy","sexi",
 "seksi","porn","pornography","porno","porns","nudo","nudos","lipshit","boffing","cock",
 "c0ck","dildo","brazzers",,"xnxx","bastard","dickhead","snatch","twat","knob","minge",
