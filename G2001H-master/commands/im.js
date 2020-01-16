@@ -1,0 +1,35 @@
+const textrandom = [
+"Poop",
+"Noob",
+"Cow",
+"Nothing",
+"Bread",
+"Octopus",
+"Snake",
+"Bug",
+"Fish",
+"Boy",
+"Woman",
+"Man",
+"Stupid",
+"Strong",
+"Weak",
+"Annoying",
+"Pro",
+"Girl",
+"Grandma",
+"Grandpa",
+"Kid",
+"Baby",
+"Human",
+"Evil",
+"Angel",
+"Fox",
+"Beautiful",
+"Ugly",
+"Animal",
+];
+
+module.exports.run = async (bot, message, args) => {
+    message.reply("*You are " + textrandom[Math.floor(Math.random() * textrandom.length)] + "*");
+}
