@@ -2,12 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const pref = require("./package.json")
 const { getMember, formatDate } = require("./functions.js");
-const swearWords = [
-"slut","penis","bitch","bitches","asshole","fuck","fak","fucker","fucking","fuckyou","motherfucker",
-"fakyou","faggot","fag00t","vagina","dick","dicks","pussy","anus","sex","sexy","sexi",
-"seksi","porn","pornography","porno","porns","nudo","nudos","lipshit","boffing","cock",
-"c0ck","dildo","brazzers",,"xnxx","bastard","dickhead","snatch","twat","knob","minge",
-"prick","gash","flaps","punani","clunge","beaver","bloodclaat","bellend","fanny","clunge","boobs",];
+const swearWords = ["slut","penis","bitch","asshole","fuck","faggot","vagina","dick","pussy","anus","sex","porn","nudo","lipshit"];
 const discordlink = ["https://discord.gg/"];
 
 function duration(ms){
