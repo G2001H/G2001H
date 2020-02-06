@@ -5,6 +5,6 @@ module.exports.run = async (bot, message, args) => {
     .setColor("RANDOM")
     .setTitle(`**Hey ${message.author.username}, tell me the truth:**`)
     .setDescription(truths[Math.floor(Math.random() * truths.length)])
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     message.reply(embeds);
 }
