@@ -26,6 +26,6 @@ module.exports.run = async (bot, message, args) => {
     .addField("🌐 **__Followers:__**", account.edge_followed_by.count,true)
     .addField("🌐 **__Following:__**", account.edge_follow.count,true)
     .addField(account.is_private ? "🔐 **__Private account__**" : "🔓 **__Private account__**", account.is_private ? "Yes" : "No")
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     message.channel.send(embed);
 }
