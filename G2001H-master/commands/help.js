@@ -23,8 +23,7 @@ module.exports.run = async (bot, message, args) => {
         ;Truth
         ;Dare
         ;Say
-        ;Verify
-        ;VerifyHelp
+        ;Im
         ;Instagram
         ;Love
         ;RPS
@@ -51,6 +50,6 @@ module.exports.run = async (bot, message, args) => {
         ;IsTrusted
         ;Java
     `,true)
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     message.channel.send(embed1);
 }
