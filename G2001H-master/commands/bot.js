@@ -4,11 +4,11 @@ module.exports.run = async (bot, message, args) => {
     const embeds = new Discord.RichEmbed()
     .setTitle("📜 **G2001H's Bot Information!** 📜")
     .setColor("RANDOM")
-    .addField("👑 **__Bot Owners:__**", `G2001H#2001`,true)
+    .addField("👑 **__Bot Owners:__**", `G2001H#6405`,true)
     .addField("📅 **__Bot Created:__**", "29/08/2019",true)
     .addField("👥 **__Total Servers:__**", bot.guilds.size,true)
     .setThumbnail(message.guild.iconURL)
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     message.channel.send(embeds)
 }
 
