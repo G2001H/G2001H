@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
             .addField('📍 **__Degree Type:__**',location.degreetype, true)
             .addField('🌬️ **__Winds:__**',current.winddisplay, true)
             .addField('💧 **__Humidity:__**', `${current.humidity}%`, true)
-            .setFooter('Bot by: G2001H#2001')
+            .setFooter('Bot by: G2001H#6405')
             message.channel.send(embed);
     });
 }
