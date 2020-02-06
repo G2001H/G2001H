@@ -22,7 +22,6 @@ module.exports.run = async (bot, message, args) => {
         ;8ball
         ;Truth
         ;Dare
-        ;Say
         ;Im
         ;Instagram
         ;Love
@@ -45,6 +44,7 @@ module.exports.run = async (bot, message, args) => {
         ;Poll
         ;ServerSetName
         ;ChannelSay
+        ;Say
         ;Setup
         ;Giveaway
         ;IsTrusted
