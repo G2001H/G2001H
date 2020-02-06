@@ -14,6 +14,6 @@ module.exports.run = async (bot, message, args) => {
     .addField(`🤍 **__Roles (${message.guild.roles.size - 1}):__**`, message.guild.roles.filter(r => r.id !== message.guild.id).map(r => r).join(" ") || 'None', true)
     .addField('📅 **__Server Created:__**', formatDate(message.guild.createdAt),true)
     .setThumbnail(message.guild.iconURL)
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
      message.channel.send(embed);
 }
