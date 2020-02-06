@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("RANDOM")
         .setTitle(`**Search: ${search}**`)
         .setImage(urls[0])
-        .setFooter('Bot by: G2001H#2001')
+        .setFooter('Bot by: G2001H#6405')
         message.channel.send(embeds);
     });
 }
