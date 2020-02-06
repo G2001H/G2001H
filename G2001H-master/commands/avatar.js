@@ -7,6 +7,6 @@ module.exports.run = async (bot, message, args) => {
     .setColor("RANDOM")
     .setTitle(`**${user.username}'s Avatar**`)
     .setImage(user.avatarURL||user.displayAvatarURL)
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     message.channel.send(embed)
 }
