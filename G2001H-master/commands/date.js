@@ -7,6 +7,6 @@ module.exports.run = async (bot, message, args) => {
     .addField('📅 **__Date:__**', (months[new Date().getMonth()]) + "/" + ((new Date().getDate())) + "/" + (new Date().getFullYear()))
     .addField('📌 **__Day:__**', (days[new Date().getDay()]))
     .addField('🕐 **__Time:__**', (new Date().getHours()) + ":" + (new Date().getMinutes()) + ":" + (new Date().getSeconds()))
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     message.channel.send(embeds)
 }
