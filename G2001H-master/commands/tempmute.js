@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
         .addField('👇 **__Temporarily Muted by:__**', `${message.author}`,true)
         .addField('🕐 **__Temporarily Muted Time:__**', `${ms(ms(time))}`, true)
         .addField('❓ **__Temporarily Muted Reason:__**', reason,true)
-        .setFooter('Bot by: G2001H#2001')
+        .setFooter('Bot by: G2001H#6405')
         person.removeRole(mainrole.id);
         person.addRole(muterole.id);
         logs.send(embeds)
