@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("📍 **__Location:__**", devForumData.user.location || "Unknown",true)
     .addField("👁️ **__Last Seen:__**", devForumData.user.last_seen_at,true)
     .addField("📆 **__Created:__**", devForumData.user.created_at,true)
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     .setThumbnail(img)
     message.channel.send(embeds)
 }
