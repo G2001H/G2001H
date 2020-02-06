@@ -11,6 +11,6 @@ module.exports.run = async (bot, message, args) => {
     **;Create RoleVerified** - *Will create a role with name (Verified)!*"
     **;Create RoleMuted** - *Will create a role with name (Muted)!*"
     `)
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     message.channel.send(Embeds);
 }
