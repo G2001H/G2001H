@@ -12,6 +12,6 @@ module.exports.run = async (bot, message, args) => {
     .addField("👤 **__Your Name:__**", args[0])
     .addField("❤️ **__Crush Name:__**", args[1])
     .addField("💞 **__The chance of a relationship:__**", Math.floor(love) + "%")
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     message.channel.send(embed);
 }
