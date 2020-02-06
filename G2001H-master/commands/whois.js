@@ -15,6 +15,6 @@ module.exports.run = async (bot, message, args) => {
     .addField('📅 **__Member Created:__**', formatDate(member.user.createdAt),true)
     .addField('📅 **__Member Joined:__**', formatDate(member.joinedAt), true)
     .setThumbnail(member.user.avatarURL)
-    .setFooter('Bot by: G2001H#2001')
+    .setFooter('Bot by: G2001H#6405')
     message.channel.send(embed2);
 }
