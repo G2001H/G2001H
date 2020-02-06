@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
         embed
             .setTitle("")
             .addField(result, `${reacted} vs ${botChoice}`)
-            .setFooter('Bot by: G2001H#2001');
+            .setFooter('Bot by: G2001H#6405');
         m.edit(embed);
         function getResult(me, clientChosen) {
             if ((me === "🗻" && clientChosen === "✂") ||
