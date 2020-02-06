@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
         .addField('📅 **__Muted Date:__**', formatDate(message.createdAt))
         .addField('👇 **__Muted by:__**', `${message.author}`,true)
         .addField('❓ **__Muted Reason:__**', reason,true)
-        .setFooter('Bot by: G2001H#2001')
+        .setFooter('Bot by: G2001H#6405')
         person.removeRole(mainrole.id);
         person.addRole(muterole.id);
         logs.send(embeds)
