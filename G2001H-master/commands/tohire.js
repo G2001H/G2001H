@@ -57,7 +57,7 @@ React with ❎ to delete this hiring
                     collector.on('collect', (r) => {
                         switch (r.emoji.name) {
                             case '✅': {
-                                embed.setFooter(`Bot by: G2001H#2001`);
+                                embed.setFooter(`Bot by: G2001H#6405`);
                                 embedMessage.edit(embed)
                                 embedMessage.delete(0);
                                 ch.send(`<@&661119497821749289>, **Boring from Pinging? go to <#661109548299321344> and remove the react for this ping.**`)
@@ -65,7 +65,7 @@ React with ❎ to delete this hiring
                                 break;
                             }
                             case '❎': {
-                              embed.setFooter(`Bot by: G2001H#2001`);
+                              embed.setFooter(`Bot by: G2001H#6405`);
                                 embedMessage.edit(embed)
                                 embedMessage.delete(0);
                                 break;
