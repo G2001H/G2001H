@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         const embedsss = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setTitle('**Succsessfuly deleted ' + args[0] + ' messages!**')
-        .setFooter('Bot by: G2001H#2001')
+        .setFooter('Bot by: G2001H#6405')
         message.channel.send(embedsss).then(message => {
         message.delete(2000).catch(console.error);
         });
