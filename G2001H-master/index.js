@@ -49,7 +49,7 @@ client.on("guildCreate", guild => {
 	.addField("🤍 **__Roles:__**", guild.roles.filter(r => r.id !== guild.id).map(r => r.name).join(", ") || 'None',true)
 	.addField("📅 **__Guild Created:__**", formatDate(guild.createdAt),true)
 	.setThumbnail(guild.iconURL)
-    .setFooter('Bot by: G2001H#7660')
+    .setFooter('Bot by: G2001H#6405')
 	channelSend.send(embed)
   });
   
@@ -63,7 +63,7 @@ client.on("guildCreate", guild => {
 	.setColor("RANDOM")
 	.addField("🌟 **__Guild Name:__**", guild.name)
 	.addField("🌟 **__Guild ID:__**", guild.id)
-    .setFooter('Bot by: G2001H#7660')
+    .setFooter('Bot by: G2001H#6405')
 	channelSend.send(embed)
   });
 
@@ -101,7 +101,7 @@ if(message.guild.ownerID === message.author.id){
 	.setColor("RANDOM")
 	.addField("**__Member:__**", message.author.tag)
 	.addField("**__Bad Word:__**", message.content)
-	.setFooter("Bot by: G2001H#2001")
+	.setFooter("Bot by: G2001H#6405")
 	sendwarns.send(embeds).catch(error => console.log(error))
 	message.reply("*Don't say bad words!*").then(sentMessage =>{
 	sentMessage.delete(10000).catch(error => console.log(error))
@@ -118,7 +118,7 @@ if(message.guild.ownerID === message.author.id){
 	.setColor("RANDOM")
 	.addField("**__Member:__**", message.author.tag)
 	.addField("**__Link:__**", message.content)
-	.setFooter("Bot by: G2001H#2001")
+	.setFooter("Bot by: G2001H#6405")
 	sendwarns.send(embeds2).catch(error => console.log(error))
 	message.reply("*It's not allowed to advertise discord server link!*").then(sentMessage =>{
 	sentMessage.delete(10000).catch(error => console.log(error))
