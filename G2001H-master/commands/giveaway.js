@@ -20,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
         Time: **${ms(ms(time))}**
         Hosted by: ${message.author}
         `)
-        .setFooter("Bot by: G2001H#2001 | Ends at")
+        .setFooter("Bot by: G2001H#6405 | Ends at")
         .setTimestamp(dateTime)
     var embedSend = await message.channel.send(giveawayEmbed);
     embedSend.react("🎉");
@@ -65,7 +65,7 @@ module.exports.run = async (bot, message, args) => {
             Winner: ${winners[i]}
             Hosted by: ${message.author}
             `)
-            .setFooter("Bot by: G2001H#2001 | Ends at")
+            .setFooter("Bot by: G2001H#6405 | Ends at")
             .setTimestamp(dateTime))
         }
     }, ms(time));
