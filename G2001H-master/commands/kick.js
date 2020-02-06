@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
         .addField('📅 **__Kicked Date:__**', formatDate(message.createdAt))
         .addField('👇 **__Kicked by:__**', `${message.author}`,true)
         .addField('❓ **__Kicked Reason:__**', reason,true)
-        .setFooter('Bot by: G2001H#2001')
+        .setFooter('Bot by: G2001H#6405')
         message.channel.send(`${target} **has been kicked!**`);
     target.kick(reason);
     logs.send(embed);
