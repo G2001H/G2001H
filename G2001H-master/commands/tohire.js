@@ -65,8 +65,6 @@ React with ❎ to delete this hiring
                                 break;
                             }
                             case '❎': {
-                              embed.setFooter(`Bot by: G2001H#6405`);
-                                embedMessage.edit(embed)
                                 embedMessage.delete(0);
                                 break;
                               }
