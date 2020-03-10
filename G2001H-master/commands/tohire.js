@@ -19,7 +19,7 @@ exports.run = (bot, message, args) => {
       .setDescription("Do you wan't to say anything for Description?")
       .setFooter("You have 1 minute to answer!")
     ///////////////////////////////////////////////////////////
-    if(message.channel.id == "658369889735802890"){
+    if(message.channel.id == "658371106197209098"){
                     message.reply("Channel found")
       let embed = new Discord.RichEmbed()
                     message.reply("Embed Created")
