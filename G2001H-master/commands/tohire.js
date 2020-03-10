@@ -37,13 +37,16 @@ exports.run = (bot, message, args) => {
         collector2.on('collect', mm => {
           const collector3 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
           embed.addField(`💸 **__Payment:__**`, mm)
+                    message.reply("Collector 4")
           message.channel.send(HireBuilderQ3)
           collector3.on('collect', mmm => {
             const collector4 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
             embed.addField(`❓ **__Skills:__**`, mmm)
+                    message.reply("Collector 5")
             message.channel.send(HireBuilderQ4)
             collector4.on('collect', mmmm => {
                 embed.addField("📜 **__Description:__**", mmmm)
+                    message.reply("Collector 6")
                 embed.setColor("RANDOM")
                 embed.setThumbnail(message.author.avatarURL||message.author.displayAvatarURL)
                 embed.setTitle("**To Hire**")
