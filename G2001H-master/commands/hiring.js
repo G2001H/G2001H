@@ -23,7 +23,7 @@ exports.run = (bot, message, args) => {
   .setDescription("What type of clothings you want to make?")
   .setFooter("You have 1 minute to answer!")
 ///////////////////////////////////////////////////////////
-if(message.channel.name == "hiring-commands" || message.channel.id == "658371106197209098"){
+if(message.channel.id == "658371106197209098"){
   if(args[0] == null){
     const nullmessage = new Discord.RichEmbed()
     .setColor("RANDOM")
@@ -42,7 +42,6 @@ if(message.channel.name == "hiring-commands" || message.channel.id == "658371106
   }else{
     if(args[0].toLowerCase() == "builder"){
       let embed = new Discord.RichEmbed()
-     
       const collector0 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
       embed.addField(`📞 **__Contact:__**`, message.author)
       const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
@@ -69,7 +68,7 @@ if(message.channel.name == "hiring-commands" || message.channel.id == "658371106
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                 `)
-                let ch = message.guild.channels.find(x => x.name === "⚒builder-hiring⚒" || x.id === "658363858196365313")
+                let ch = message.guild.channels.find(x => x.id === "658363858196365313")
                 if (ch) {
                   message.channel.bulkDelete(9)
                   message.channel.send({embed}).then(embedMessage => {
@@ -132,7 +131,7 @@ React with ❎ to delete this hiring
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
               `)
-              let ch = message.guild.channels.find(x => x.name === "📜scripter-hiring📜" || x.id === "658363926953590787")
+              let ch = message.guild.channels.find(x => x.id === "658363926953590787")
               if (ch) {
                 message.channel.bulkDelete(9)
                 message.channel.send({embed}).then(embedMessage => {
@@ -195,7 +194,7 @@ React with ❎ to delete this hiring
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                 `)
-                let ch = message.guild.channels.find(x => x.name === "🎨gfx-hiring🎨" || x.id === "658363970188738600")
+                let ch = message.guild.channels.find(x => x.id === "658363970188738600")
                 if (ch) {
                   message.channel.bulkDelete(9)
                   message.channel.send({embed}).then(embedMessage => {
@@ -258,7 +257,7 @@ React with ❎ to delete this hiring
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                   `)
-                  let ch = message.guild.channels.find(x => x.name === "👕clothing-hiring👕" || x.id === "658364011003379742")
+                  let ch = message.guild.channels.find(x => x.id === "658364011003379742")
                   if (ch) {
                     message.channel.bulkDelete(9)
                     message.channel.send({embed}).then(embedMessage => {
@@ -321,7 +320,7 @@ React with ❎ to delete this hiring
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                     `)
-                    let ch = message.guild.channels.find(x => x.name === "🎇graphic-hiring🎇" || x.id === "658364212736688169")
+                    let ch = message.guild.channels.find(x => x.id === "658364212736688169")
                     if (ch) {
                       message.channel.bulkDelete(9)
                       message.channel.send({embed}).then(embedMessage => {
@@ -384,7 +383,7 @@ React with ❎ to delete this hiring
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                       `)
-                      let ch = message.guild.channels.find(x => x.name === "🎞animator-hiring🎞" || x.id === "658364363719311386")
+                      let ch = message.guild.channels.find(x => x.id === "658364363719311386")
                       if (ch) {
                         message.channel.bulkDelete(9)
                         message.channel.send({embed}).then(embedMessage => {
@@ -447,7 +446,7 @@ React with ❎ to delete this hiring
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                       `)
-                      let ch = message.guild.channels.find(x => x.name === "📋gui-hiring📋" || x.id === "658364422955466782")
+                      let ch = message.guild.channels.find(x => x.id === "658364422955466782")
                       if (ch) {
                         message.channel.bulkDelete(9)
                         message.channel.send({embed}).then(embedMessage => {
