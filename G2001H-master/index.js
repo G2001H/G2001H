@@ -30,9 +30,9 @@ client.on('ready', () =>{
     let membercountchannel = myGuild.channels.get('645738814605623306');
     membercountchannel.setName("Members: " + memberscont).catch(error => console.log(error));
     //client.user.setAvatar("https://tr.rbxcdn.com/e16ed63ce4be52489f515504993c3101/150/150/AvatarHeadshot/Png")
-    const channel = myGuild.channels.find(ch => ch.name === '👋welcome👋' || ch.name === 'welcome');
+    const channel = myGuild.channels.find(ch => ch.id === '686701942562357284' || ch.name === 'bump');
     if (!channel) return;
-    channel.send("Bot is online!");
+    channel.send("Bot is online!").catch(error => console.log(error));;
 });
 
 client.on("guildMemberAdd", member => {
