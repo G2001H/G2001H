@@ -36,7 +36,7 @@ client.on('ready', () =>{
 	const embeds = new Discord.RichEmbed()
 	.setTitle("__Bot Restarted__")
 	.setColor("RANDOM")
-	.addDescription("Bot changed from up to starting!")
+	.setDescription("Bot changed from up to starting!")
 	.setFooter("Bot by: G2001H#6405")
 	channel.send(embeds).catch(error => console.log(error))
 });
