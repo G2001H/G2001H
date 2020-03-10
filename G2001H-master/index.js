@@ -14,7 +14,9 @@ return `${days.padStart(1, '0')}:${hrs.padStart(2, '0')}:${min.padStart(2, '0')}
 }
 
 client.on('ready', () =>{
-    console.log("Bot is online!"); 
+    const channel = myGuild.channels.find(ch => ch.name === '👋welcome👋' || ch.name === 'welcome');
+    if (!channel) return;
+    channel.send("Bot is online!");
     let statuss = ["dnd", "idle", "online"]
     let types = ["WATCHING", "STREAMING", "PLAYING", "LISTENING"]
     setInterval(() => {
@@ -32,40 +34,6 @@ client.on('ready', () =>{
     membercountchannel.setName("Members: " + memberscont).catch(error => console.log(error));
     //client.user.setAvatar("https://tr.rbxcdn.com/e16ed63ce4be52489f515504993c3101/150/150/AvatarHeadshot/Png")
 });
-
-client.on("guildCreate", guild => {
-	let myGuild = client.guilds.get('616778093905969155');
-	if(!myGuild) return;
-    let channelSend = myGuild.channels.find(ch => ch.name === "bot-guilds");
-	if(!channelSend) return;
-	const embed = new Discord.RichEmbed()
-	.setTitle("📜 **Join Server** 📜")
-	.setColor("RANDOM")
-	.addField("👑 **__Guild Owner:__**", guild.owner,true)
-	.addField("🌟 **__Guild Name:__**", guild.name,true)
-	.addField("🌟 **__Guild ID:__**", guild.id,true)
-	.addField("🙋‍♂️ **__Members Count:__**", guild.memberCount,true)
-	.addField("🔘 **__Members Online:__**", guild.members.filter(m => m.presence.status !== "offline").size.toString(),true)
-	.addField("🤍 **__Roles:__**", guild.roles.filter(r => r.id !== guild.id).map(r => r.name).join(", ") || 'None',true)
-	.addField("📅 **__Guild Created:__**", formatDate(guild.createdAt),true)
-	.setThumbnail(guild.iconURL)
-    .setFooter('Bot by: G2001H#6405')
-	channelSend.send(embed)
-  });
-  
-  client.on("guildDelete", guild => {
-	let myGuild = client.guilds.get('616778093905969155');
-	if(!myGuild) return;
-    let channelSend = myGuild.channels.find(ch => ch.name === "bot-guilds");
-	if(!channelSend) return console.log("Err")
-	const embed = new Discord.RichEmbed()
-	.setTitle("📜 **Left Server** 📜")
-	.setColor("RANDOM")
-	.addField("🌟 **__Guild Name:__**", guild.name)
-	.addField("🌟 **__Guild ID:__**", guild.id)
-    .setFooter('Bot by: G2001H#6405')
-	channelSend.send(embed)
-  });
 
 client.on("guildMemberAdd", member => {
     if (member.guild.id !== "616778093905969155") return;
