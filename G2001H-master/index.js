@@ -14,6 +14,9 @@ return `${days.padStart(1, '0')}:${hrs.padStart(2, '0')}:${min.padStart(2, '0')}
 }
 
 client.on('ready', () =>{
+    if (member.guild.id !== "616778093905969155") return;
+    let myGuild = client.guilds.get('616778093905969155');
+    if(!myGuild) return;
     const channel = myGuild.channels.find(ch => ch.name === '👋welcome👋' || ch.name === 'welcome');
     if (!channel) return;
     channel.send("Bot is online!");
