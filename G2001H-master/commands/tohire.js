@@ -19,7 +19,7 @@ exports.run = (bot, message, args) => {
       .setDescription("Do you wan't to say anything for Description?")
       .setFooter("You have 1 minute to answer!")
     ///////////////////////////////////////////////////////////
-    if(message.channel.name == "🕹️hiring-commands🕹️" || message.channel.name == "hiring-commands" || message.channel.name == "💬staff-general💬" ){
+    if(message.channel.name == "hiring-commands" || message.channel.id == "658369889735802890"){
       let embed = new Discord.RichEmbed()
       const collector0 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
       embed.addField(`📞 **__Contact:__**`, message.author)
@@ -47,7 +47,7 @@ exports.run = (bot, message, args) => {
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                 `)
-                let ch = message.guild.channels.find(x => x.name === "💸to-hire💸")
+                let ch = message.guild.channels.find(x => x.name === "💸to-hire💸" || x.id === "658369889735802890")
                 if (ch) {
                   message.channel.bulkDelete(9)
                   message.channel.send({embed}).then(embedMessage => {
