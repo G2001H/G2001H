@@ -14,12 +14,6 @@ return `${days.padStart(1, '0')}:${hrs.padStart(2, '0')}:${min.padStart(2, '0')}
 }
 
 client.on('ready', () =>{
-    if (member.guild.id !== "616778093905969155") return;
-    let myGuild = client.guilds.get('616778093905969155');
-    if(!myGuild) return;
-    const channel = myGuild.channels.find(ch => ch.name === '👋welcome👋' || ch.name === 'welcome');
-    if (!channel) return;
-    channel.send("Bot is online!");
     let statuss = ["dnd", "idle", "online"]
     let types = ["WATCHING", "STREAMING", "PLAYING", "LISTENING"]
     setInterval(() => {
@@ -36,6 +30,9 @@ client.on('ready', () =>{
     let membercountchannel = myGuild.channels.get('645738814605623306');
     membercountchannel.setName("Members: " + memberscont).catch(error => console.log(error));
     //client.user.setAvatar("https://tr.rbxcdn.com/e16ed63ce4be52489f515504993c3101/150/150/AvatarHeadshot/Png")
+    const channel = myGuild.channels.find(ch => ch.name === '👋welcome👋' || ch.name === 'welcome');
+    if (!channel) return;
+    channel.send("Bot is online!");
 });
 
 client.on("guildMemberAdd", member => {
