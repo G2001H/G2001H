@@ -30,9 +30,15 @@ client.on('ready', () =>{
     let membercountchannel = myGuild.channels.get('645738814605623306');
     membercountchannel.setName("Members: " + memberscont).catch(error => console.log(error));
     //client.user.setAvatar("https://tr.rbxcdn.com/e16ed63ce4be52489f515504993c3101/150/150/AvatarHeadshot/Png")
-    const channel = myGuild.channels.find(ch => ch.id === '686701942562357284' || ch.name === 'bump');
+    const channel = myGuild.channels.find(ch => ch.id === "686701942562357284" || ch.name === "bump");
     if (!channel) return;
-    channel.send("Bot is online!").catch(error => console.log(error));;
+    channel.send("Bot is online!").catch(error => console.log(error));
+	const embeds = new Discord.RichEmbed()
+	.setTitle("__Bot Restarted__")
+	.setColor("RANDOM")
+	.addDescription("Bot changed from up to starting!")
+	.setFooter("Bot by: G2001H#6405")
+	channel.send(embeds).catch(error => console.log(error))
 });
 
 client.on("guildMemberAdd", member => {
