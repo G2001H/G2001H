@@ -20,31 +20,24 @@ const Discord = require('discord.js');
 
 exports.run = (bot, message, args) => {
     if(message.channel.id == "658371106197209098"){
-                    message.reply("Channel found")
       let embed = new Discord.RichEmbed()
-                    message.reply("Embed Created")
       const collector0 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
-                    message.reply("Collector 1")
       embed.addField(`📞 **__Contact:__**`, message.author)
       const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
       message.channel.send(HireBuilderQ1)
       collector1.on('collect', m => {
-                    message.reply("Collector 2")
         const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
         embed.addField(`👨 **__Roblox Username:__**`, m)
         message.channel.send(HireBuilderQ2)
         collector2.on('collect', mm => {
-                    message.reply("Collector 3")
           const collector3 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
           embed.addField(`💸 **__Payment:__**`, mm)
           message.channel.send(HireBuilderQ3)
           collector3.on('collect', mmm => {
-                    message.reply("Collector 4")
             const collector4 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
             embed.addField(`❓ **__Skills:__**`, mmm)
             message.channel.send(HireBuilderQ4)
             collector4.on('collect', mmmm => {
-                    message.reply("Collector 5")
                 embed.addField("📜 **__Description:__**", mmmm)
                 embed.setColor("RANDOM")
                 embed.setThumbnail(message.author.avatarURL||message.author.displayAvatarURL)
@@ -54,7 +47,6 @@ exports.run = (bot, message, args) => {
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                 `)
-                    message.reply("Collector 6")
                 let ch = message.guild.channels.find(x => x.id === "658369889735802890")
                 if (ch) {
                   message.channel.bulkDelete(9)
@@ -92,4 +84,3 @@ React with ❎ to delete this hiring
     message.reply("This command is not allowed in this channel!")
     }
 }
-    
