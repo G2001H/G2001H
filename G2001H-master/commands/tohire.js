@@ -19,15 +19,20 @@ exports.run = (bot, message, args) => {
       .setDescription("Do you wan't to say anything for Description?")
       .setFooter("You have 1 minute to answer!")
     ///////////////////////////////////////////////////////////
-    if(message.channel.name == "hiring-commands" || message.channel.id == "658369889735802890"){
+    if(message.channel.id == "658369889735802890"){
+                    message.reply("Channel found")
       let embed = new Discord.RichEmbed()
+                    message.reply("Embed Created")
       const collector0 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
       embed.addField(`📞 **__Contact:__**`, message.author)
+                    message.reply("Collector 1")
       const collector1 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });
       message.channel.send(HireBuilderQ1)
+                    message.reply("Collector 2")
       collector1.on('collect', m => {
         const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
         embed.addField(`👨 **__Roblox Username:__**`, m)
+                    message.reply("Collector 3")
         message.channel.send(HireBuilderQ2)
         collector2.on('collect', mm => {
           const collector3 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { max:1 ,time: 60000 });  
@@ -47,7 +52,7 @@ exports.run = (bot, message, args) => {
 React with ✅ to post this hiring
 React with ❎ to delete this hiring
                 `)
-                let ch = message.guild.channels.find(x => x.name === "💸to-hire💸" || x.id === "658369889735802890")
+                let ch = message.guild.channels.find(x => x.id === "658369889735802890")
                 if (ch) {
                   message.channel.bulkDelete(9)
                   message.channel.send({embed}).then(embedMessage => {
