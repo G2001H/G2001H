@@ -32,7 +32,6 @@ client.on('ready', () =>{
     //client.user.setAvatar("https://tr.rbxcdn.com/e16ed63ce4be52489f515504993c3101/150/150/AvatarHeadshot/Png")
     const channel = myGuild.channels.find(ch => ch.id === "686701942562357284" || ch.name === "bump");
     if (!channel) return;
-    channel.send("Bot is online!").catch(error => console.log(error));
 	const embeds = new Discord.RichEmbed()
 	.setTitle("__Bot Restarted__")
 	.setColor("RANDOM")
